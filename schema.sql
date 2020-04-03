@@ -24,8 +24,9 @@ CREATE TABLE user_location (
      zipcode INT NOT NULL,
      lat DECIMAL(10,8) NOT NULL,
      lng DECIMAL(11,8) NOT NULL,
+
      user_id INT,
-     FOREIGN KEY(user_id) REFERENCES account (user_id)
+     FOREIGN KEY(user_id) REFERENCES account (user_id),
      PRIMARY KEY(id)
 
 )
@@ -47,7 +48,7 @@ CREATE TABLE user_profile(
     about_me VARCHAR(150),
 
     user_id INT,
-    FOREIGN KEY(user_id) REFERENCES account (user_id)
+    FOREIGN KEY(user_id) REFERENCES account (user_id),
     PRIMARY KEY(id)
 
 )
