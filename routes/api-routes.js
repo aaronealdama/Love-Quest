@@ -1,4 +1,4 @@
-var orm = require("../models/models");
+const User = require("../models/models");
 
 // var connection = require("../config/connection");
 var path = require('path');
@@ -12,7 +12,7 @@ module.exports = function(app) {
         var username = request.body.username;
         var password = request.body.password;
         if (username && password) {
-            orm.findAll({
+            User.findAll({
                 where: {
                     username: username,
                     password: password

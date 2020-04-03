@@ -4,8 +4,14 @@ var sequelize = require("../config/connection.js");
 
 // Creates a "ORM" model that matches up with DB
 var orm = sequelize.define("accounts", {
-    username: Sequelize.STRING,
-    password: Sequelize.STRING
+    username: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
 }, {
     timestamps: false
 });
