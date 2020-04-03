@@ -34,6 +34,7 @@ CREATE TABLE user_location (
 CREATE TABLE user_profile(
     id INT UNIQUE NOT NULL AUTO_INCREMENT,
     birthday DATE,
+    sex VARCHAR(10),
     interests VARCHAR(50),
     marital_status VARCHAR(30) NOT NULL,
     height VARCHAR (30),
