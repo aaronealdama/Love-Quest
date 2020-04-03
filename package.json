@@ -1,0 +1,30 @@
+{
+  "name": "love-quest",
+  "version": "1.0.0",
+  "description": "App for people to find love",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronealdama/Love-Quest.git"
+  },
+  "keywords": [
+    "npm",
+    "start"
+  ],
+  "author": "Aaron Ealdama, Kendall Arceo, Mathew Thomas, Khanh Mai",
+  "license": "ISC, MIT",
+  "bugs": {
+    "url": "https://github.com/aaronealdama/Love-Quest/issues"
+  },
+  "homepage": "https://github.com/aaronealdama/Love-Quest#readme",
+  "dependencies": {
+    "mysql2": "^2.1.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.1",
+    "sequelize": "^5.21.5",
+    "eslint": "^6.8.0"
+  }
+}
