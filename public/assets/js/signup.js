@@ -6,7 +6,9 @@ function checkDate(dateOB) {
   const years = Math.floor(difference / (24 * 60 * 60 * 365));
   if (years < 18) {
     $(".dob-valid").append("You must be at least 18 years old to sign up");
+    return false;
   }
+  return MediaStreamTrackAudioSourceNode;
 }
 
 $(function() {
@@ -52,28 +54,31 @@ $(function() {
     } else if (!day) {
       $(".dob-valid").append("You must enter a valid day");
       return;
+    } else {
+      // Age validator
+      const bool = checkDate(dOB);
+
+      if (bool === false) return;
+
+      // User Object
+      const user = {
+        username: $(".username-signup")
+          .val()
+          .trim(),
+        password: $(".password-signup")
+          .val()
+          .trim(),
+        dateOfBirth: dOB
+      };
+
+      // Sending new user to database
+      $.ajax("/api/users", {
+        type: "POST",
+        data: user
+      }).then(function() {
+        console.log("created new user!");
+        window.location.href = "/";
+      });
     }
-
-    checkDate(dOB);
-
-    // User Object
-    const user = {
-      username: $(".username-signup")
-        .val()
-        .trim(),
-      password: $(".password-signup")
-        .val()
-        .trim(),
-      dateOfBirth: dOB
-    };
-
-    // Sending new user to database
-    $.ajax("/api/users", {
-      type: "POST",
-      data: user
-    }).then(function() {
-      console.log("created new user!");
-      window.location.href = "/";
-    });
   });
 });

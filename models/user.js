@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    date_of_birth: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     has_profile: {
       type: DataTypes.BOOLEAN,
       defaultValue: false

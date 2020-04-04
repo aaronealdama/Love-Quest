@@ -60,7 +60,8 @@ module.exports = function(app) {
         }).then(function(dbProfile) {
           // Profile page is rendered through the
           // database information in Profile
-          res.render("profile", dbProfile);
+          console.log(dbProfile);
+          res.render("profile", dbProfile[0]);
         });
       }
     });
@@ -68,7 +69,8 @@ module.exports = function(app) {
   // Route for creating a user's profile
   app.post("/api/profiles", function(req, res) {
     db.Profile.create(req.body).then(function(dbProfile) {
-      res.render("profile", dbProfile);
+      console.log(dbProfile);
+      res.render("profile", dbProfile[0]);
     });
   });
   // Route for updating user's has_profile value
