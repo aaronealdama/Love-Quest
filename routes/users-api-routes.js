@@ -38,6 +38,7 @@ module.exports = function(app) {
   app.post("/api/auth", passport.authenticate("local"), function(req, res) {
     const username = req.body.username;
     const password = req.body.password;
+    console.log(username, password);
     db.User.findOne({
       where: {
         username: username,

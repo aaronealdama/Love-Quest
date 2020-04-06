@@ -24,17 +24,10 @@
     "eslint": "^6.8.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.1",
-<<<<<<< HEAD
     "sequelize": "^5.21.5",
     "eslint": "^6.8.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "express-session": "^1.16.1"
-=======
-    "express-session": "^1.17.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.5"
->>>>>>> b3bfc8ad1980923eb33e928a7a5f8b59ea75da4d
   }
 }

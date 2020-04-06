@@ -9,7 +9,6 @@ passport.use(
     db.User.findOne({
       where: {
         username: username,
-        password: password
       }
     }).then(function(dbUser) {
       // If there's no user with the given email
