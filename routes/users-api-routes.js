@@ -1,4 +1,5 @@
 const db = require("../models");
+const passport = require("../config/passport");
 
 module.exports = function(app) {
   // API routes for accessing users
@@ -11,11 +12,12 @@ module.exports = function(app) {
         username: username
       }
     }).then(function(dbAuth) {
-      if (dbAuth.length > 0) {
-        res.redirect("/signup-exists");
+      console.log(dbAuth);
+      if (dbAuth.length) {
+        return res.send(false);
       } else {
         db.User.create(req.body).then(function(dbUser) {
-          res.json(dbUser);
+          return res.send(true);
         });
       }
     });
@@ -33,7 +35,7 @@ module.exports = function(app) {
   });
 
   // Route for authenticating login
-  app.post("/api/auth", function(req, res) {
+  app.post("/api/auth", passport.authenticate("local"), function(req, res) {
     const username = req.body.username;
     const password = req.body.password;
     db.User.findOne({
@@ -42,28 +44,31 @@ module.exports = function(app) {
         password: password
       }
     }).then(function(dbUser) {
-      console.log(dbUser);
-      if (!dbUser.length) {
-        res.redirect("/login-wrong");
-      } else if (dbUser[0].has_profile === false) {
-        // If has_profile variable is false user is
-        // taken to the profile signup page
-        res.render("signup");
+      if (dbUser === null) {
+        res.send(false);
       } else {
-        // Else user's profile information is searched
-        // within the profile database
-        const username = dbUser[0].username;
-        db.Profile.findOne({
-          where: {
-            email: username
-          }
-        }).then(function(dbProfile) {
-          // Profile page is rendered through the
-          // database information in Profile
-          console.log(dbProfile);
-          res.render("profile", dbProfile[0]);
-        });
+        res.send(true);
       }
+
+      // else if (dbUser[0].has_profile === false) {
+      //   // If has_profile variable is false user is
+      //   // taken to the profile signup page
+      //   res.render("profile");
+      // } else {
+      //   // Else user's profile information is searched
+      //   // within the profile database
+      //   const username = dbUser[0].username;
+      //   db.Profile.findOne({
+      //     where: {
+      //       email: username
+      //     }
+      //   }).then(function(dbProfile) {
+      //     // Profile page is rendered through the
+      //     // database information in Profile
+      //     console.log(dbProfile);
+      //     res.render("user-profile", dbProfile[0]);
+      //   });
+      // }
     });
   });
   // Route for creating a user's profile
@@ -82,5 +87,11 @@ module.exports = function(app) {
     }).then(function(dbUser) {
       res.json(dbUser);
     });
+  });
+
+  // Route for logging out
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
   });
 };

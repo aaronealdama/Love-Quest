@@ -1,8 +1,8 @@
 // Outer functions
-function booleanConv(str) {
-  if (str === "No") return false;
-  return true;
-}
+// function booleanConv(str) {
+//   if (str === "No") return false;
+//   return true;
+// }
 
 $(function() {
   // Profile sign up event listener
@@ -100,14 +100,13 @@ $(function() {
           .val()
           .trim()
       };
-
-      // Ajax post request
-      $.ajax("/api/profiles", {
-        type: "POST",
-        data: profile
-      }).then(function() {
-        console.log("created new profile!");
-      });
     }
+    // Ajax post request
+    $.ajax("/api/profiles", {
+      type: "POST",
+      data: profile
+    }).then(function() {
+      console.log("created new profile!");
+    });
   });
 });

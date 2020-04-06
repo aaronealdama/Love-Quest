@@ -7,32 +7,26 @@ function checkDate(dateOB) {
   if (years < 18) {
     $(".dob-valid").append("You must be at least 18 years old to sign up");
     return false;
+  } else if (years >= 18) {
+    return true;
   }
-  return MediaStreamTrackAudioSourceNode;
+  $(".dob-valid").append("Please information in valid format");
 }
 
 $(function() {
   // Event Listeners
   $(".sign-up-form").on("submit", function(e) {
     e.preventDefault();
-    // Date
-    const year = $(".year")
-      .val()
-      .trim();
-    const month = $(".month")
-      .val()
-      .trim();
-    const day = $(".day")
-      .val()
-      .trim();
-
-    const dOB = `${year}-${month}-${date}`;
+    $(".username-valid").empty();
+    $(".password-valid").empty();
+    $(".dob-valid").empty();
+    $(".ps-valid").empty();
 
     // Validations
     if (!$(".username-signup").val()) {
       $(".username-valid").append("You must input a username");
       return;
-    } else if (!".password-signup".val()) {
+    } else if (!$(".password-signup").val()) {
       $(".password-valid").append("You must input a password");
       return;
     } else if ($(".username-signup").val().length < 8) {
@@ -45,18 +39,15 @@ $(function() {
         "Your password must be at least 12 characters long"
       );
       return;
-    } else if (!year) {
-      $(".dob-valid").append("You must enter a valid year");
+    } else if (!$(".date-of-birth").val()) {
+      $(".dob-valid").append("You must enter a date of birth");
       return;
-    } else if (!month) {
-      $(".dob-valid").append("You must enter a valid month");
-      return;
-    } else if (!day) {
-      $(".dob-valid").append("You must enter a valid day");
+    } else if ($(".password-signup").val() !== $(".password-confirm").val()) {
+      $(".ps-valid").append("Your passwords must match");
       return;
     } else {
       // Age validator
-      const bool = checkDate(dOB);
+      const bool = checkDate($(".date-of-birth"));
 
       if (bool === false) return;
 
@@ -68,16 +59,22 @@ $(function() {
         password: $(".password-signup")
           .val()
           .trim(),
-        dateOfBirth: dOB
+        dateOfBirth: $(".date-of-birth")
+          .val()
+          .trim()
       };
 
       // Sending new user to database
       $.ajax("/api/users", {
         type: "POST",
         data: user
-      }).then(function() {
-        console.log("created new user!");
-        window.location.href = "/";
+      }).then(function(bool) {
+        if (bool === true) {
+          window.location.href = "/";
+          console.log("created new user!");
+        } else if (bool === false) {
+          window.location.href = "/signup-exists";
+        }
       });
     }
   });
