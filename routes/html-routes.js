@@ -1,29 +1,33 @@
 // Sends various html pages to users
 
-// Packages:
+// Middleware
 
-const path = require("path");
+const authenticated = require("../config/middleware/authenicated");
 
 // Routes
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.render("home");
   });
 
   app.get("/signup", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup");
   });
 
   app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login");
   });
 
   app.get("/login-wrong", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login-wrong.html"));
+    res.render("login-wrong");
   });
 
-  app.get("/login-exists", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login-exists.html"));
+  app.get("/signup-exists", function(req, res) {
+    res.render("signup-exists");
+  });
+
+  app.get("/profile-signup", authenticated, function(req, res) {
+    res.render("profile-signup");
   });
 };
