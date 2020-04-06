@@ -8,7 +8,8 @@ passport.use(
     // When a user tries to sign in this code runs
     db.User.findOne({
       where: {
-        username: username
+        username: username,
+        password: password
       }
     }).then(function(dbUser) {
       // If there's no user with the given email
