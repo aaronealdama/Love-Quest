@@ -13,9 +13,9 @@ function checkDate(dateOB) {
   $(".dob-valid").append("Please information in valid format");
 }
 
-$(function() {
+$(function () {
   // Event Listeners
-  $(".sign-up-form").on("submit", function(e) {
+  $(".sign-up-form").on("submit", function (e) {
     e.preventDefault();
     $(".username-valid").empty();
     $(".password-valid").empty();
@@ -53,25 +53,19 @@ $(function() {
 
       // User Object
       const user = {
-        username: $(".username-signup")
-          .val()
-          .trim(),
-        password: $(".password-signup")
-          .val()
-          .trim(),
-        dateOfBirth: $(".date-of-birth")
-          .val()
-          .trim()
+        username: $(".username-signup").val().trim(),
+        password: $(".password-signup").val().trim(),
+        dateOfBirth: $(".date-of-birth").val().trim(),
       };
 
       // Sending new user to database
       $.ajax("/api/users", {
         type: "POST",
-        data: user
-      }).then(function(bool) {
+        data: user,
+      }).then(function (bool) {
         if (bool === true) {
-          window.location.href = "/";
           console.log("created new user!");
+          window.location.href = "/profile-signup";
         } else if (bool === false) {
           window.location.href = "/signup-exists";
         }
