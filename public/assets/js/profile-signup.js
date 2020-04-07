@@ -1,6 +1,6 @@
 // Outer functions
 function booleanConv(str) {
-  if (str === "No") return false;
+  if (str.toLowerCase() === "no") return false;
   return true;
 }
 
@@ -58,6 +58,7 @@ $(function () {
         occupation: $(".occupation").val().trim(),
         annual_income: $(".annual-income").val().trim(),
         about_me: $(".about-me").val().trim(),
+        picture: $(".picture").val(),
       };
       // Ajax post request
       $.ajax("/api/profiles", {
@@ -73,7 +74,7 @@ $(function () {
         data: profile,
       }).then(function () {
         console.log("updated user profile!");
-        window.location.href = "/homepage";
+        window.location.href = "/login";
       });
     }
   });
