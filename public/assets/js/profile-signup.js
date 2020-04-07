@@ -1,12 +1,13 @@
 // Outer functions
-// function booleanConv(str) {
-//   if (str === "No") return false;
-//   return true;
-// }
+function booleanConv(str) {
+  if (str === "No") return false;
+  return true;
+}
 
-$(function() {
+$(function () {
   // Profile sign up event listener
-  $(".profile-sign-up").on("submit", function() {
+  $(".profile-sign-up").on("submit", function (e) {
+    e.preventDefault();
     // Validator divs are emptied
     $(".firstname-valid").empty();
     $(".lastname-valid").empty();
@@ -38,75 +39,42 @@ $(function() {
     } else {
       // Profile object
       const profile = {
-        first_name: $(".firstname")
-          .val()
-          .trim(),
-        last_name: $(".lastname")
-          .val()
-          .trim(),
-        birthday: $(".birthday")
-          .val()
-          .trim(),
-        email: $(".email")
-          .val()
-          .trim(),
-        sex: $(".sex")
-          .val()
-          .trim(),
-        interests: $(".interests")
-          .val()
-          .trim(),
-        marital_status: $(".marital-status")
-          .val()
-          .trim(),
-        height: $(".height")
-          .val()
-          .trim(),
-        has_kids: $(".has-kids")
-          .val()
-          .trim(),
-        wants_kids: $(".wants-kids")
-          .val()
-          .trim(),
-        education: $(".education")
-          .val()
-          .trim(),
-        smoker: booleanConv(
-          $(".smoker")
-            .val()
-            .trim()
-        ),
-        drinker: booleanConv(
-          $(".drinker")
-            .val()
-            .trim()
-        ),
-        ethnicity: $(".ethnicity")
-          .val()
-          .trim(),
-        religion: $(".religion")
-          .val()
-          .trim(),
-        body_type: $(".body-type")
-          .val()
-          .trim(),
-        occupation: $(".occupation")
-          .val()
-          .trim(),
-        annual_income: $(".annual-income")
-          .val()
-          .trim(),
-        about_me: $(".about-me")
-          .val()
-          .trim()
+        first_name: $(".firstname").val().trim(),
+        last_name: $(".lastname").val().trim(),
+        birthday: $(".birthday").val().trim(),
+        email: $(".email").val().trim(),
+        sex: $(".sex").val().trim(),
+        interests: $(".interests").val().trim(),
+        marital_status: $(".marital-status").val().trim(),
+        height: $(".height").val().trim(),
+        has_kids: booleanConv($(".has-kids").val().trim()),
+        wants_kids: booleanConv($(".wants-kids").val().trim()),
+        education: $(".education").val().trim(),
+        smoker: booleanConv($(".smoker").val().trim()),
+        drinker: booleanConv($(".drinker").val().trim()),
+        ethnicity: $(".ethnicity").val().trim(),
+        religion: $(".religion").val().trim(),
+        body_type: $(".body-type").val().trim(),
+        occupation: $(".occupation").val().trim(),
+        annual_income: $(".annual-income").val().trim(),
+        about_me: $(".about-me").val().trim(),
       };
+      // Ajax post request
+      $.ajax("/api/profiles", {
+        type: "POST",
+        data: profile,
+      }).then(function () {
+        console.log("created new profile!");
+      });
+
+      // Ajax put request
+      $.ajax("/api/update", {
+        type: "PUT",
+        data: profile,
+      }).then(function () {
+        console.log("updated user profile!");
+        window.location.href = "/homepage";
+      });
     }
-    // Ajax post request
-    $.ajax("/api/profiles", {
-      type: "POST",
-      data: profile
-    }).then(function() {
-      console.log("created new profile!");
-    });
   });
 });
