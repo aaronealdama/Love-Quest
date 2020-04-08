@@ -82,6 +82,26 @@ module.exports = function (app) {
     });
   });
 
+  // Route for getting users based on data submitted
+  app.post("/api/users/profiles", function (req, res) {
+    const option = req.body.option;
+    const value = req.body.value;
+    db.Profile.findAll({
+      where: {
+        [option]: value,
+      },
+    }).then(function (dbProfile) {
+      let emptyArr = [];
+      if (dbProfile !== null) {
+        for (let i = 0; i < dbProfile.length; i++) {
+          if (dbProfile[i].dataValues.email === req.user.username) continue;
+          emptyArr.push(dbProfile[i]);
+        }
+      }
+      res.send(emptyArr);
+    });
+  });
+
   // Route for updating user's has_profile value
   app.put("/api/update", function (req, res) {
     const username = req.body.email;
