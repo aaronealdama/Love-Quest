@@ -1,6 +1,9 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
+// MiddleWare
+const profile = require("../config/middleware/profile-auth");
+
 module.exports = function (app) {
   // API routes for accessing users
 
@@ -99,6 +102,34 @@ module.exports = function (app) {
         }
       }
       res.send(emptyArr);
+    });
+  });
+
+  // Route to get users by location
+  app.post("/api/location", function (req, res) {
+    const option = req.body.input;
+    const location = req.body.location;
+
+    db.Profile.findAll({
+      where: {
+        [option]: location,
+      },
+    }).then(function (dbProfile) {
+      res.send(dbProfile);
+    });
+  });
+
+  //Route for retrieving specific user
+  // information
+  app.get("/api/user/:name", function (req, res) {
+    const name = req.params.name;
+
+    db.Profile.findOne({
+      where: {
+        name: name,
+      },
+    }).then(function (dbProfile) {
+      res.send(dbProfile);
     });
   });
 
