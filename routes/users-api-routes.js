@@ -1,117 +1,121 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
-    // API routes for accessing users
+module.exports = function (app) {
+  // API routes for accessing users
 
-    // Route for creating new users into the database
-    app.post("/api/users", function(req, res) {
-        const username = req.body.username;
-        db.User.findAll({
-            where: {
-                username: username
-            }
-        }).then(function(dbAuth) {
-            console.log(dbAuth);
-            if (dbAuth.length) {
-                return res.send(false);
-            } else {
-                db.User.create(req.body).then(function(dbUser) {
-                    return res.send(true);
-                });
-            }
+  // Route for creating new users into the database
+  app.post("/api/users", function (req, res) {
+    const username = req.body.username;
+    db.User.findAll({
+      where: {
+        username: username,
+      },
+    }).then(function (dbAuth) {
+      console.log(dbAuth);
+      if (dbAuth.length) {
+        return res.send(false);
+      } else {
+        db.User.create(req.body).then(function (dbUser) {
+          return res.send(true);
         });
+      }
     });
+  });
 
-    // Route for deleting users
-    app.delete("/api/users/:id", function(req, res) {
-        db.User.destroy({
-            where: {
-                id: req.params.id
-            }
-        }).then(function(dbUser) {
-            res.json(dbUser);
-        });
+  // Route for deleting users
+  app.delete("/api/users/:id", function (req, res) {
+    db.User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then(function (dbUser) {
+      res.json(dbUser);
     });
+  });
 
-    // Route for authenticating login
-    app.post("/api/auth", passport.authenticate("local"), function(req, res) {
-        const username = req.body.username;
-        const password = req.body.password;
-        db.User.findOne({
-            where: {
-                username: username,
-                password: password
-            }
-        }).then(function(dbUser) {
-            if (dbUser === null) {
-                res.send(false);
-            } else {
-                res.send(true);
-            }
+  // Route for authenticating login
+  app.post("/api/auth", passport.authenticate("local"), function (req, res) {
+    const username = req.body.username;
+    const password = req.body.password;
+    console.log(username, password);
+    db.User.findOne({
+      where: {
+        username: username,
+        password: password,
+        has_profile: false,
+      },
+    }).then(function (dbUser) {
+      if (dbUser === null) {
+        res.send(false);
+      } else {
+        res.send(true);
+      }
+    });
+  });
 
-            // else if (dbUser[0].has_profile === false) {
-            //   // If has_profile variable is false user is
-            //   // taken to the profile signup page
-            //   res.render("profile");
-            // } else {
-            //   // Else user's profile information is searched
-            //   // within the profile database
-            //   const username = dbUser[0].username;
-            //   db.Profile.findOne({
-            //     where: {
-            //       email: username
-            //     }
-            //   }).then(function(dbProfile) {
-            //     // Profile page is rendered through the
-            //     // database information in Profile
-            //     console.log(dbProfile);
-            //     res.render("user-profile", dbProfile[0]);
-            //   });
-            // }
-        });
+  // Route for creating a user's profile
+  app.post("/api/profiles", function (req, res) {
+    db.Profile.create(req.body).then(function (dbProfile) {
+      res.json(dbProfile);
     });
-    // Route for creating a user's profile
-    app.post("/api/profiles", function(req, res) {
-        db.Profile.create(req.body).then(function(dbProfile) {
-            console.log(dbProfile);
-            res.render("profile", dbProfile[0]);
-        });
-    });
-    // Route for updating user's has_profile value
-    app.put("/api/update", function(req, res) {
-        const username = req.body.email;
-        const update = { has_profile: true };
-        db.User.update(update, {
-            where: { username: username }
-        }).then(function(dbUser) {
-            res.json(dbUser);
-        });
-    });
+  });
 
-    // Route for logging out
-    app.get("/logout", function(req, res) {
-        req.logout();
-        res.redirect("/");
-    });
+  // Route for getting user profile information
+  app.post("/api/user/profile", passport.authenticate("local"), function (
+    req,
+    res
+  ) {
+    const username = req.body.username;
 
-    app.get("/api/:characters?", function(req, res) {
-        console.log(req.params.characters)
-        if (req.params.characters) {
-            // Display the JSON for ONLY that character.
-            // (Note how we're using the ORM here to run our searches)
-            db.User.findAll({
-                where: {
-                    zipcode: req.params.characters //changed to find by zip code
-                }
-            }).then(function(result) {
-                console.log(res.json(result))
-                return res.json(result);
-            });
-        } else {
-            db.User.findAll().then(function(result) {
-                return res.json(result);
-            });
+    db.Profile.findOne({
+      where: {
+        email: username,
+      },
+    }).then(function (dbProfile) {
+      console.log(dbProfile);
+      if (dbProfile === null) {
+        res.send(false);
+      } else {
+        res.send(true);
+      }
+    });
+  });
+
+  // Route for getting users based on data submitted
+  app.post("/api/users/profiles", function (req, res) {
+    const option = req.body.option;
+    const value = req.body.value;
+    db.Profile.findAll({
+      where: {
+        [option]: value,
+      },
+    }).then(function (dbProfile) {
+      let emptyArr = [];
+      if (dbProfile !== null) {
+        for (let i = 0; i < dbProfile.length; i++) {
+          if (dbProfile[i].dataValues.email === req.user.username) continue;
+          emptyArr.push(dbProfile[i]);
         }
+      }
+      res.send(emptyArr);
     });
+  });
+
+  // Route for updating user's has_profile value
+  app.put("/api/update", function (req, res) {
+    const username = req.body.email;
+    const update = { has_profile: true };
+    db.User.update(update, {
+      where: { username: username },
+    }).then(function (dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  // Route for logging out
+  app.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/");
+  });
 };
