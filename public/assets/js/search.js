@@ -48,14 +48,14 @@ function resultCreator(arr) {
     const cardBody = elementGenerator("div", "card-body");
     const header = elementGenerator(
       "h5",
-      "card-title",
+      "card-title header",
       "",
       `${arr[i].first_name} ${arr[i].last_name}`
     );
     const para = elementGenerator("p", "card-text", "", arr[i].about_me);
     const button = elementGenerator(
       "button",
-      "btn btn-primary",
+      "btn btn-primary view-button",
       "",
       "View their profile"
     );
@@ -91,4 +91,14 @@ $(function () {
       }
     });
   });
+
+  // Dynamically generated content event
+  // listeners
+});
+
+$(document).on("click", ".view-button", function () {
+  const name = $(this).parent().find("h5").text();
+  const arr = name.split(" ").join("");
+  console.log(arr);
+  window.location.href = `/user/${arr}`;
 });

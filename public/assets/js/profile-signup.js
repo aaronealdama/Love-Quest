@@ -43,13 +43,14 @@ $(function () {
       $(".city-valid").append("You must input a city");
     } else if (!$(".state").val()) {
       $(".state-valid").append("You must input a state");
-    } else if ($(".zipcode").val()) {
+    } else if (!$(".zipcode").val()) {
       $(".zipcode-valid").append("You must input a zipcode");
     } else {
       // Profile object
       const profile = {
         first_name: $(".firstname").val().trim(),
         last_name: $(".lastname").val().trim(),
+        name: `${$(".firstname").val().trim()}${$(".lastname").val().trim()}`,
         email: $(".email").val().trim(),
         city: $(".city").val().trim(),
         state: $(".state").val().trim(),
@@ -68,7 +69,6 @@ $(function () {
         interests: $(".interests").val().trim(),
         has_kids: booleanConv($(".has-kids").val().trim()),
         wants_kids: booleanConv($(".wants-kids").val().trim()),
-
         smoker: booleanConv($(".smoker").val().trim()),
         drinker: booleanConv($(".drinker").val().trim()),
         about_me: $(".about-me").val().trim(),
