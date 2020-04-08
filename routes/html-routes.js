@@ -44,4 +44,8 @@ module.exports = function(app) {
     app.get("/search", profile, function(req, res) {
         res.render("search");
     });
+
+    app.get("/accountname", profile, function(req, res) {
+        res.render("accountname");
+    });
 };
