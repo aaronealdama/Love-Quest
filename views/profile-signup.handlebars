@@ -18,25 +18,31 @@
 
 <h1>Profile Sign Up</h1>
 
-<form action="/profile-signup" method="POST" id="profile-signup" class="profile-signup">
+<form action="/profile-signup" method="POST" id="profile-signup" class="profile-sign-up">
     <label for="firstname">FIRST NAME</label>
     <input type="text" id="firstname" class="firstname">
+    <div class="firstname-valid"></div>
     <label for="lastname">LAST NAME</label>
     <input type="text" id="lastname" class="lastname">
+    <div class="lastname-valid"></div>
     <label for="email">EMAIL</label>
     <input type="text" id="email" class="email">
+    <div class="email-valid"></div>
 
 
     <br><br>
 
     <label for="cIty">CITY</label>
     <input type="text" id="city" class="city">
+    <div class="city-valid"></div>
 
     <label for="state">STATE</label>
     <input type="text" id="country" class="country">
+    <div class="state-valid"></div>
 
     <label for="zipcode">zip</label>
     <input type="text" id="zipcode" class="zipcode">
+    <div class="zipcode-valid"></div>
 
     <br><br>
 
@@ -46,7 +52,7 @@
 
 
     <label for="marital status">MARITAL STATUS</label>
-    <input list="marital-status">
+    <input list="marital-status" class="marital-status">
     <datalist id="marital-status" class="marital-status">
         <option value="Single">
         <option value="Separated">
@@ -56,14 +62,14 @@
     <br><br>
 
     <label for="sex">I'M</label>
-    <input list="sex">
+    <input list="sex" class="sex">
     <datalist id="sex" class="sex">
         <option value="MAN">
         <option value="WOMAN">
     </datalist>
 
     <label for="desire">LOOKING FOR</label>
-    <input list="desire">
+    <input list="desire" class="desire">
     <datalist id="desire" class="desire">
         <option value="MAN">
         <option value="WOMAN">
@@ -76,7 +82,7 @@
 
 
     <label for="education">EDUCATION</label>
-    <input list="education">
+    <input list="education" class='education'>
     <datalist id="education" class="education">
         <option value="University/college">
         <option value="High School">
@@ -93,7 +99,7 @@
 
 
     <label for="annual-income">ANNUAL INCOME</label>
-    <input list="annual-income">
+    <input list="annual-income" class="annual-income">
     <datalist id="annual-income" class="annual-income">
 
         <option value="Up to 20,000">
@@ -109,7 +115,7 @@
     <br><br>
 
     <label for="religion">RELIGION</label>
-    <input list="religion">
+    <input list="religion" class="religion">
     <datalist id="religion" class="religion">
         <option value="Christian">
         <option value="Muslim">
@@ -125,7 +131,7 @@
 
 
     <label for="ethnicity">ETHNICITY</label>
-    <input list="ethnicity">
+    <input list="ethnicity" class="ethnicity">
     <datalist id="ethnicity" class="ethnicity">
         <option value="White / caucasion">
         <option value="Black / african descent">
@@ -140,7 +146,7 @@
     <br><br>
 
     <label for="body_type">BODY TYPE</label>
-    <input list="body-type">
+    <input list="body-type" class="body-type">
     <datalist id="body-type" class="body-type">
         <option value="Skinny">
         <option value="Athletic">
@@ -150,19 +156,19 @@
     </datalist>
 
     <label for="interest">INTEREST</label>
-    <input type="text" id="interest" class="interest">
+    <input type="text" id="interest" class="interests">
     <br><br>
 
 
     <label for="has_kids">HAS KIDS</label>
-    <input list="has-kids">
+    <input list="has-kids" class="has-kids">
     <datalist id="has-kids" class="has-kids">
         <option value="Yes">
         <option value="No">
     </datalist>
 
     <label for="wants_kids">WANTS KIDS</label>
-    <input list="wants-kids">
+    <input list="wants-kids" class="wants-kids">
     <datalist id="wants-kids" class="has-kids">
         <option value="Yes">
         <option value="No">
@@ -172,7 +178,7 @@
 
 
     <label for="drink">DRINK</label>
-    <input list="drinker">
+    <input list="drinker" class="drinker">
     <datalist id="drinker" class="drinker">
         <option value="Yes">
         <option value="No">
@@ -180,7 +186,7 @@
     </datalist>
 
     <label for="smoke">SMOKE</label>
-    <input list="smoker">
+    <input list="smoker" class="smoker">
     <datalist id="smoker" class="smoker">
         <option value="Yes">
         <option value="No">
@@ -193,7 +199,22 @@
 
     <textarea id="about-me" class="about-me" rows="5" cols="50"> </textarea>
 
+    <label for="picture">PICTURE</label>
+    <input type="file" accept="image/*" class="picture" placeholder="picture">
     <br><br>
 
     <input type="submit" value="Sign Up">
 </form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="../../assets/js/profile-signup.js"></script>

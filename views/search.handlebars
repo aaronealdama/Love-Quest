@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Love Quest - Search Segment Demo</h1>
+        <h3>In development phase...</h3>
+        <hr>
+        <a href="/add" class="btn btn-danger btn-lg">
+            <span class="fa fa-plus"></span> Add a new LoveQuester</a>
+        <a href="/all" class="btn btn-danger btn-lg">
+            <span class="fa fa-th-list"></span> View all LoveQuesters !</a>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-6">
+            <select class="form-control options">
+                <option>Marital Status</option>
+                <option>Height</option>
+                <option>Has Kids</option>
+                <option>Wants Kids</option>
+                <option>Education</option>
+                <option>Smoker</option>
+                <option>Drinker</option>
+                <option>Ethnicity</option>
+                <option>Religion</option>
+                <option>Body Type</option>
+                <option>Occupation</option>
+            </select>
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    Search for LoveQuesters
+                </div>
+                <div class="card-body">
+                    <input type="text" id="character-search" class="form-control input">
+                    <br>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary btn-md search-button" id="search-btn">
+                            <span class="fa fa-search"></span> Find my forever LoveQuester !</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    LoveQuester Details
+                </div>
+                <div class="card-body results" id="well-section">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="../../assets/js/search.js"></script>

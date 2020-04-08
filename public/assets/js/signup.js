@@ -65,7 +65,7 @@ $(function () {
       }).then(function (bool) {
         if (bool === true) {
           console.log("created new user!");
-          window.location.href = "/profile-signup";
+          window.location.href = "/login";
         } else if (bool === false) {
           window.location.href = "/signup-exists";
         }
