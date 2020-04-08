@@ -1,7 +1,11 @@
 {
     "development": {
         "username": "root",
+<<<<<<< HEAD
         "password": "@0Lovinmt",
+=======
+        "password": "Acegunner145",
+>>>>>>> master
         "database": "userdb",
         "host": "127.0.0.1",
         "port": 3306,

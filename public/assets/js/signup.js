@@ -13,6 +13,7 @@ function checkDate(dateOB) {
     $(".dob-valid").append("Please information in valid format");
 }
 
+<<<<<<< HEAD
 $(function() {
     // Event Listeners
     $(".sign-up-form").on("submit", function(e) {
@@ -21,6 +22,16 @@ $(function() {
         $(".password-valid").empty();
         $(".dob-valid").empty();
         $(".ps-valid").empty();
+=======
+$(function () {
+  // Event Listeners
+  $(".sign-up-form").on("submit", function (e) {
+    e.preventDefault();
+    $(".username-valid").empty();
+    $(".password-valid").empty();
+    $(".dob-valid").empty();
+    $(".ps-valid").empty();
+>>>>>>> master
 
         // Validations
         if (!$(".username-signup").val()) {
@@ -51,6 +62,7 @@ $(function() {
 
             if (bool === false) return;
 
+<<<<<<< HEAD
             // User Object
             const user = {
                 username: $(".username-signup").val().trim(),
@@ -70,6 +82,25 @@ $(function() {
                     window.location.href = "/signup-exists";
                 }
             });
+=======
+      // User Object
+      const user = {
+        username: $(".username-signup").val().trim(),
+        password: $(".password-signup").val().trim(),
+        dateOfBirth: $(".date-of-birth").val().trim(),
+      };
+
+      // Sending new user to database
+      $.ajax("/api/users", {
+        type: "POST",
+        data: user,
+      }).then(function (bool) {
+        if (bool === true) {
+          console.log("created new user!");
+          window.location.href = "/login";
+        } else if (bool === false) {
+          window.location.href = "/signup-exists";
+>>>>>>> master
         }
     });
 });
