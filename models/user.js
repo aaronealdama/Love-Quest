@@ -16,6 +16,8 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         }
-    }, { timestamp: false });
+    }, {
+        timestamps: false
+    });
     return User;
 };
