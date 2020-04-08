@@ -1,13 +1,25 @@
-.container div  {
-    margin: 0 auto;
+.section {
+    position: relative;
     width: 100%;
-    
-    top: 200px;
-}
-.slogan {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     text-align: center;
+
 }
 
-.signUpText {
+body {
+    background-image: url("../css/home2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     
+}
+
+.slogan {
+    background-color: whitesmoke;
+    opacity: 0.2;
+    color: rebeccapurple;
 }
