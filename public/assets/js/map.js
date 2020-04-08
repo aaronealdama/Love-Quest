@@ -1,5 +1,5 @@
 $(function () {
-  // Event Listeners
+  // Navbar event listeners
   $(".search").on("submit", function (e) {
     e.preventDefault();
     window.location.href = "/search";
@@ -13,3 +13,5 @@ $(function () {
     window.location.href = "/map";
   });
 });
+
+// Functions
