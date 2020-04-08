@@ -28,12 +28,23 @@ function elementGenerator(element, classTitle, src, text) {
   return newElement;
 }
 
+function _arrayBufferToBase64(buffer) {
+  var arrayBufferView = new Uint8Array(buffer);
+  var blob = new Blob([arrayBufferView], { type: "image/jpeg" });
+  var urlCreator = window.URL || window.webkitURL;
+  var imageUrl = urlCreator.createObjectURL(blob);
+  return imageUrl;
+}
+
 // Function that generates the results
 // into cards the client can see
 function resultCreator(arr) {
   for (let i = 0; i < arr.length; i++) {
+    console.log("hi");
+    const imageURL = _arrayBufferToBase64(arr[i].picture.data);
+    console.log(imageURL);
     const cardDiv = elementGenerator("div", "card");
-    const image = elementGenerator("img", "image", arr[i].picture);
+    const image = elementGenerator("img", "image", imageURL);
     const cardBody = elementGenerator("div", "card-body");
     const header = elementGenerator(
       "h5",

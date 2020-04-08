@@ -12,22 +12,56 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    zip: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     birthday: {
       type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
+    marital_status: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     sex: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    interests: {
+    desire: {
       type: DataTypes.STRING,
     },
-    marital_status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+
     height: {
+      type: DataTypes.STRING,
+    },
+    education: {
+      type: DataTypes.STRING,
+    },
+    occupation: {
+      type: DataTypes.STRING,
+    },
+    annual_income: {
+      type: DataTypes.INTEGER,
+    },
+    religion: {
+      type: DataTypes.STRING,
+    },
+    ethnicity: {
+      type: DataTypes.STRING,
+    },
+    body_type: {
+      type: DataTypes.STRING,
+    },
+    interests: {
       type: DataTypes.STRING,
     },
     has_kids: {
@@ -38,31 +72,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
-    education: {
-      type: DataTypes.STRING,
-    },
-    smoker: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
     drinker: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
-    ethnicity: {
-      type: DataTypes.STRING,
-    },
-    religion: {
-      type: DataTypes.STRING,
-    },
-    body_type: {
-      type: DataTypes.STRING,
-    },
-    occupation: {
-      type: DataTypes.STRING,
-    },
-    annual_income: {
-      type: DataTypes.INTEGER,
+    smoker: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     about_me: {
       type: DataTypes.STRING,
@@ -72,9 +88,9 @@ module.exports = function (sequelize, DataTypes) {
     },
     picture: {
       type: DataTypes.BLOB,
-      get: function () {
-        return this.getDataValue("picture").toString("utf8");
-      },
+      // get: function () {
+      //   // return this.getDataValue("picture").toString("utf8");
+      // },
     },
   });
   return Profile;
