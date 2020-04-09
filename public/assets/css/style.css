@@ -6,7 +6,9 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    text-align: center;
+    
+    margin: 2px;
+    left: 15px;
 
 }
 
@@ -15,11 +17,16 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    left: 20px;
     
 }
 
 .slogan {
-    background-color: whitesmoke;
-    opacity: 0.2;
-    color: rebeccapurple;
+    
+    color: whitesmoke;
+    text-align: center;
+}
+
+#loveQuest {
+    color: whitesmoke;
 }
