@@ -63,24 +63,50 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_qAjXm4jKnYgletpSaY2GiQA5hMQAtk4&callback=initMap"></script>
 <script>
 
-    function initMap(arr) {
+    function initMap(arr, data) {
         console.log(arr);
         var map = new google.maps.Map(document.getElementById("map"), {
             center: {
                 lat: 31.51073,
                 lng: -96.4247,
             },
-            zoom: 8,
+            zoom: 6,
         });
-        if (arr !== null) {
+
+
+
+        if (arr !== null && data !== null) {
             for (let i = 0; i < arr.length; i++) {
+                var content = `<div class="card" style="width: 18rem;">
+  <img src="${data[i].picture}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${data[i].first_name} ${data[i].last_name}</h5>
+    <p class="card-text">${data[i].about_me}</p>
+    <a href="http://localhost:8080/user/${data[i].name}" class="btn btn-primary">View their profile</a>
+  </div>
+</div>`
+                // Marker generated
                 var marker = new google.maps.Marker({
                     position: {
                         lat: arr[i].lat,
                         lng: arr[i].lng,
                     },
                     map: map
-                })
+                });
+
+                // Info Window generated
+                var infowindow = new google.maps.InfoWindow({
+                });
+
+                // Event Listener for each marker
+                google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+                    return function () {
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
+                    };
+                })(marker, content, infowindow));
+
+
             }
         }
 
@@ -117,7 +143,7 @@
                     emptyArr.push(response);
                     console.log(emptyArr);
                     if (emptyArr.length === data.length) {
-                        initMap(emptyArr);
+                        initMap(emptyArr, data);
                     }
                 });
             }
