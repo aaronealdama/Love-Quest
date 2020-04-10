@@ -27,6 +27,30 @@ body {
     text-align: center;
 }
 
+.buttonForms {
+    color: whitesmoke;
+    
+    background-color: #598ad2;
+    border: none;
+    border-radius: 12px;
+}
+
+.login-button {
+    color: whitesmoke;
+    text-align: center;
+    background-color: #598ad2;
+    border: none;
+    border-radius: 12px;
+}
+
+.signup-button {
+    color: whitesmoke;
+    text-align: center;
+    background-color: #598ad2;
+    border: none;
+    border-radius: 12px;
+}
+
 #loveQuest {
     color: whitesmoke;
 }
