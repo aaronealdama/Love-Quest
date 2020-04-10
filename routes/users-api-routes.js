@@ -1,6 +1,9 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
+// MiddleWare
+const profile = require("../config/middleware/profile-auth");
+
 module.exports = function (app) {
   // API routes for accessing users
 
@@ -79,6 +82,54 @@ module.exports = function (app) {
       } else {
         res.send(true);
       }
+    });
+  });
+
+  // Route for getting users based on data submitted
+  app.post("/api/users/profiles", function (req, res) {
+    const option = req.body.option;
+    const value = req.body.value;
+    db.Profile.findAll({
+      where: {
+        [option]: value,
+      },
+    }).then(function (dbProfile) {
+      let emptyArr = [];
+      if (dbProfile !== null) {
+        for (let i = 0; i < dbProfile.length; i++) {
+          if (dbProfile[i].dataValues.email === req.user.username) continue;
+          emptyArr.push(dbProfile[i]);
+        }
+      }
+      res.send(emptyArr);
+    });
+  });
+
+  // Route to get users by location
+  app.post("/api/location", function (req, res) {
+    const option = req.body.input;
+    const location = req.body.location;
+
+    db.Profile.findAll({
+      where: {
+        [option]: location,
+      },
+    }).then(function (dbProfile) {
+      res.send(dbProfile);
+    });
+  });
+
+  //Route for retrieving specific user
+  // information
+  app.get("/api/user/:name", function (req, res) {
+    const name = req.params.name;
+
+    db.Profile.findOne({
+      where: {
+        name: name,
+      },
+    }).then(function (dbProfile) {
+      res.send(dbProfile);
     });
   });
 

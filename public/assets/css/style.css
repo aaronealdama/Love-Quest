@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
     margin: 2px;
     left: 15px;
 
@@ -20,6 +19,8 @@ body {
     left: 20px;
     
 }
+
+html { overflow-y: scroll; }
 
 .slogan {
     
@@ -51,6 +52,17 @@ body {
     border-radius: 12px;
 }
 
+.profileSign {
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 12px;
+   
+}
+
 #loveQuest {
     color: whitesmoke;
+}
+#map {
+  height: 500px;
+  width: 100%;
 }

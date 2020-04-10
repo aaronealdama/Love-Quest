@@ -40,4 +40,16 @@ module.exports = function (app) {
   app.get("/homepage", profile, function (req, res) {
     res.render("homepage");
   });
+
+  app.get("/search", profile, function (req, res) {
+    res.render("search");
+  });
+
+  app.get("/user/:name", profile, function (req, res) {
+    res.render("profile");
+  });
+
+  app.get("/map", profile, function (req, res) {
+    res.render("map");
+  });
 };
