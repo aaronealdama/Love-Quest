@@ -72,8 +72,9 @@ $(function () {
         smoker: booleanConv($(".smoker").val().trim()),
         drinker: booleanConv($(".drinker").val().trim()),
         about_me: $(".about-me").val().trim(),
-        picture: $(".picture").val(),
+        picture: document.querySelector(".picture").files[0].name,
       };
+      console.log(profile);
       // Ajax post request
       $.ajax("/api/profiles", {
         type: "POST",

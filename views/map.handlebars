@@ -73,8 +73,6 @@
             zoom: 6,
         });
 
-
-
         if (arr !== null && data !== null) {
             for (let i = 0; i < arr.length; i++) {
                 var content = `<div class="card" style="width: 18rem;">
@@ -141,7 +139,6 @@
 
                 $.ajax(settings).then(function (response) {
                     emptyArr.push(response);
-                    console.log(emptyArr);
                     if (emptyArr.length === data.length) {
                         initMap(emptyArr, data);
                     }
