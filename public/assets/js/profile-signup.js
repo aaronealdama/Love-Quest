@@ -39,15 +39,15 @@ $(function() {
         } else if (!$(".marital-status").val()) {
             $(".marital-status-valid").append("You must input a marital status");
             return;
-        } else if (!$(".city").val()) {
-            $(".city-valid").append("You must input a city");
-            return;
-        } else if (!$(".state").val()) {
-            $(".state-valid").append("You must input a state");
-            return;
-        } else if ($(".zipcode").val()) {
-            $(".zipcode-valid").append("You must input a zipcode");
-            return;
+            // } else if (!$(".city").val()) {
+            //     $(".city-valid").append("You must input a city");
+            //     return;
+            // } else if (!$(".state").val()) {
+            //     $(".state-valid").append("You must input a state");
+            //     return;
+            // } else if ($(".zipcode").val()) {
+            //     $(".zipcode-valid").append("You must input a zipcode");
+            //     return;
         } else {
             // Profile object
             const profile = {
