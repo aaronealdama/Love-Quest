@@ -52,4 +52,22 @@ module.exports = function (app) {
   app.get("/map", profile, function (req, res) {
     res.render("map");
   });
+
+  app.get("/chat", profile, function (req, res) {
+    res.render("chat");
+  });
+
+  app.get("/chat/username=:username/chatroom=:chatroom", profile, function (
+    req,
+    res
+  ) {
+    const username = req.params.username;
+    console.log(username);
+    if (req.user.username !== username) {
+      console.log("You are not allowed access");
+      res.render("homepage");
+    } else {
+      res.render("chat-room");
+    }
+  });
 };

@@ -1,71 +1,201 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">LOVEQUEST</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="banner-area">
+    <div class="wrapper">
+        <div class="navigation">
+            <div class="logo">
+                LoveQuest
+            </div>
+            <nav>
+                <a href="/homepage">Home</a>
+                <a href="/logout">Logout</a>
+                <a href="/signup">Sign Up</a>
+                <a href="/map">Map</a>
+                <a href="/chat">Chat</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
 
-    
-    <a class="navbar-brand" href="/map">Map</a>
-    <a class="navbar-brand" href="/user/:name>Edit">Edit Profile</a>
-    <a class="navbar-brand" href="/search">Search</a>
+        <div class="container emp-profile">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 logout">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
-                Logout
-            </button>
-        </form>
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="profile-img">
+                        <img class="profile" alt="" style="width:150px;height:150px" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="text-align: center;">
+                <div class="col-md">
+                    <div class="profile-head">
+                        <br>
+                        <h5 class="welcome">
+                        </h5>
+                        <p class="about-me"></p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>Additional Section</p>
+                        <a href="">Redirect Link</a><br />
+                        <a href="">Redirect Link</a><br />
+                        <a href="">Redirect Link</a>
+                    </div>
+                </div>
+
+
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            {{!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>User Id</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Test</p>
+                                    </div>
+                                </div> --}}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="para-name"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="para-email"></p>
+                                </div>
+                            </div>
+                            {{!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>123 456 7890</p>
+                                    </div>
+                                </div> --}}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Marital Status</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="para-marital"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- search -->
+                <div class="container">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md">
+                            <div class="profile-head">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">Search for someone
+                                            !</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <select class="form-control options">
+                                <option>Marital Status</option>
+                                <option>Height</option>
+                                <option>Has Kids</option>
+                                <option>Wants Kids</option>
+                                <option>Education</option>
+                                <option>Smoker</option>
+                                <option>Drinker</option>
+                                <option>Ethnicity</option>
+                                <option>Religion</option>
+                                <option>Body Type</option>
+                                <option>Occupation</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <select class="form-control gender">
+                                <option>MAN</option>
+                                <option>WOMAN</option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="col-lg-6">
+
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Search for LoveQuesters
+                                </div>
+                                <div class="card-body">
+                                    <input type="text" id="character-search" class="form-control input">
+                                    <br>
+                                    <div class="text-right">
+                                        <button class="btn btn-primary btn-md search-button" id="search-btn">
+                                            <span class="fa fa-search"></span> Find my forever LoveQuester
+                                            !</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    LoveQuester Details
+                                </div>
+
+                                <div class="outer-border">
+                                    <div class="inner-border">
+                                        <div class="content">
+                                            <div class="card-body results" id="well-section">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- search -->
+            </div>
+        </div>
+
     </div>
-</nav>
-
-
-
-
-
-<h1>Welcome back !</h1>
-
-
-
-<div class="container">
-    
-            <picture>
-                <img src="..." class="rounded float-left" alt="...">
-
-            </picture>
-
-
-
-
-            <div class="firstname" id="firstname">
-
-            </div>
-
-            <div class="lasttname" id="lastname">
-
-            </div>
-
-            <div class="age" id="age">
-
-            </div>
-
-            <div class="city" id="city">
-
-            </div>
-
-            <div class="state" id="state">
-
-            </div>
-
-            <div class="zipcode" id="zipcode">
-
-            </div>
-
-            <div class="distance" id="distance">
-
-            </div>
-
-
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -80,3 +210,4 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 <script src="../../assets/js/homepage.js"></script>
+<script src="../../assets/js/search.js"></script>
