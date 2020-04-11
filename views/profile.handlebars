@@ -1,0 +1,133 @@
+<div class="banner-area">
+    <div class="wrapper">
+        <div class="navigation">
+            <div class="logo">
+                LoveQuest
+            </div>
+            <nav>
+                <a href="/homepage">Home</a>
+                <a href="/logout">Logout</a>
+                <a href="/chat">Chat</a>
+                <a href="/map">Map</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+
+        <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img class="profile" alt="" style="width:150px;height:150px" />
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <h5 class="profile-name">
+                            </h5>
+                            <h6 class="profile-profession">
+                            </h6>
+                            <p class="proile-rating">Additional field <span>(Optional)</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                        aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                            </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Additional Section</p>
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a>
+                            <p>Additional Section 2</p>
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                {{!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>User Id</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Test</p>
+                                    </div>
+                                </div> --}}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="para-name"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="para-email"></p>
+                                    </div>
+                                </div>
+                                {{!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>123 456 7890</p>
+                                    </div>
+                                </div> --}}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Marital Status</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="para-marital"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<button class="btn btn-info chat">Chat</button>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../../assets/js/profile-page.js"></script>

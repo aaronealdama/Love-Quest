@@ -62,10 +62,21 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile-work">
-                                <p>Additional Section</p>
-                                <a href="">Redirect Link</a><br/>
-                                <a href="">Redirect Link</a><br/>
-                                <a href="">Redirect Link</a>
+                                <p>Chat with me !</p>
+
+                                <!-- chat -->
+                                <div class="chat-popup" id="myForm">
+                                    <form action="/action_page.php" class="form-container">
+                                      <h1>Chat</h1>
+                                  
+                                      <label for="msg"><b>Message</b></label>
+                                      <textarea placeholder="Type message.." name="msg" required></textarea>
+                                  
+                                      <button type="submit" class="btn">Send</button>
+                                      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                    </form>
+                                </div>
+                                
                                 <p>Additional Section 2</p>
                                 <a href="">Redirect Link</a><br/>
                                 <a href="">Redirect Link</a><br/>
