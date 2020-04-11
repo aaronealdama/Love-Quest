@@ -1,0 +1,76 @@
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 2px;
+    left: 15px;
+
+}
+
+body {
+    background-image: url("../css/home2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    left: 20px;
+    
+}
+
+html { overflow-y: scroll; }
+
+.slogan {
+    
+    color: whitesmoke;
+    text-align: center;
+}
+
+.buttonForms {
+    color: whitesmoke;
+    
+    background-color: #598ad2;
+    border: none;
+    border-radius: 12px;
+}
+
+.login-button {
+    color: whitesmoke;
+    text-align: center;
+    background-color: #598ad2;
+    border: none;
+    border-radius: 12px;
+}
+
+.signup-button {
+    color: whitesmoke;
+    text-align: center;
+    background-color: #598ad2;
+    border: none;
+    border-radius: 12px;
+}
+
+.profileSign {
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 12px;
+    margin:5px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 10px 0;
+    overflow: scroll;
+    left:15px;
+   
+}
+
+#loveQuest {
+    color: whitesmoke;
+}
+#map {
+  height: 500px;
+  width: 100%;
+}
