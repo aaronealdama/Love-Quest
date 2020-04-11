@@ -11,214 +11,252 @@
 
 
 <div class="container">
-    <div class="row">
+    <div class="row profileSign">
 
         <div class="col-lg-12">
             <h1>Profile Sign Up</h1>
         </div>
 
-        <div class="col-lg-12 col-md-8 col-sm-10">
+        <div class="col-lg-12 col-md-10 col-sm-10 justify-content-center">
 
             <div class="card-body">
-                <form action="/profile-signup" method="POST" id="profile-signup" class="profile-sign-up pure-form  profileSign">
+                <form action="/profile-signup" method="POST" id="profile-signup" class="profile-sign-up pure-form pure-form-stacked">
                     
-                    <form class="profile-sign-up pure-form pure-form-stacked">
-                        
-                        <div class="form-group">
+
+                    <div class ="row">
+
+                        <div class ="col-lg-3 col-md-6 col-sm-12">
+                            <div class="form-group">
                             <label for="firstname">FIRST NAME</label>
                             <input type="text" id="firstname" class="firstname">
+                            </div>
+                            <div class="firstname-valid"></div>
                         </div>
-                        <div class="firstname-valid"></div>
-                        <div class="form-group">
+                        <div class ="col-lg-3 col-md-6 col-sm-12">
+                            <div class="form-group">
                             <label for="lastname">LAST NAME</label>
                             <input type="text" id="lastname" class="lastname">
-                        </div>    
-                        <div class="lastname-valid"></div>
-                         <div class="form-group">
-                        <label for="email">EMAIL</label>
+                            </div>
+                            <div class="lastname-valid"></div>
+                        </div>
+                        <div class ="col-lg-3 col-md-6 col-sm-12">
+                            <div class="form-group">
+                            <label for="email">EMAIL</label>
                             <input type="text" id="email" class="email">
                             <div class="email-valid"></div>
+                            </div>
                         </div>
-                                            
-                        <div class="form-group">
+
+                    </div>    
+                    
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="form-group">
                             <label for="cIty">CITY</label>
                             <input type="text" id="city" class="city">
+                            </div>
+                            <div class="city-valid"></div>
                         </div>
-                        <div class="city-valid"></div>
-                        <div class="form-group">
+                        
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="city-valid"></div>
+                            <div class="form-group">
                             <label for="state">STATE</label>
                             <input type="text" id="state" class="state">
+                            </div>
+                            <div class="state-valid"></div>
                         </div>
-                        <div class="state-valid"></div>
-                        
-                        <div class="form-group">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="form-group">
                             <label for="zipcode">zip</label>
                             <input type="text" id="zipcode" class="zipcode">
+                            </div>
+                            <div class="zipcode-valid"></div>
                         </div>
-                        <div class="zipcode-valid"></div>
-
-                        
-
-
-                        <label for="birthday">BIRTHDAY</label>
-                        <input type="date" id="birthday" class="birthday" value="" min="1920-01-01">
-
-
-                        <label for="marital status">MARITAL STATUS</label>
-                        <input list="marital-status" class="marital-status">
-                        <datalist id="marital-status" class="marital-status">
-                            <option value="Single">
-                            <option value="Separated">
-                            <option value="Divorced">
-                            <option value="Widowed">
-                        </datalist>
-
+                    </div>           
                     
+                    
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-12">
+                            <div class="form-group">
+                            <label for="birthday">BIRTHDAY</label>
+                            <input type="date" id="birthday" class="birthday" value="" min="1920-01-01">
+                            </div>
 
-                        <label for="sex">I'M</label>
-                        <input list="sex" class="sex">
-                        <datalist id="sex" class="sex">
+                        </div>
+                        <div class="col-lg-5 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label for="marital status">MARITAL STATUS</label>
+                                <input list="marital-status" class="marital-status">
+                                <datalist id="marital-status" class="marital-status">
+                                <option value="Single">
+                                <option value="Separated">
+                                <option value="Divorced">
+                                <option value="Widowed">
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="sex">I'M</label>
+                            <input list="sex" class="sex">
+                            <datalist id="sex" class="sex">
                             <option value="MAN">
                             <option value="WOMAN">
-                        </datalist>
+                            </datalist>
+                        </div>
 
-                        <label for="desire">LOOKING FOR</label>
-                        <input list="desire" class="desire">
-                        <datalist id="desire" class="desire">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="desire">LOOKING FOR</label>
+                            <input list="desire" class="desire">
+                            <datalist id="desire" class="desire">
                             <option value="MAN">
                             <option value="WOMAN">
-                        </datalist>
-                        
+                            </datalist>
+                        </div>
 
-                        <label for="height">HEIGHT</label>
-                        <input type="text" id="HEIGHT" class="height">
-
-
-
-                        <label for="education">EDUCATION</label>
-                        <input list="education" class='education'>
-                        <datalist id="education" class="education">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="height">HEIGHT</label>
+                            <input type="text" id="HEIGHT" class="height">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="education">EDUCATION</label>
+                            <input list="education" class='education'>
+                            <datalist id="education" class="education">
                             <option value="University/college">
                             <option value="High School">
                             <option value="Technical/vocation">
                             <option value="Did not complete high school">
                             <option value="No formal qualification">
-                        </datalist>
-                        
+                            </datalist>
+                        </div>
 
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="occupation">OCCUPATION</label>
+                            <input type="text" id="occupation" class="occupation">
+                        </div>
 
-                        <label for="occupation">OCCUPATION</label>
-                        <input type="text" id="occupation" class="occupation">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="annual-income">ANNUAL INCOME</label>
+                            <input list="annual-income" class="annual-income">
+                            <datalist id="annual-income" class="annual-income">
+                                <option value="20000">
+                                <option value="40000">
+                                <option value="60000">
+                                <option value="80000">
+                                <option value="100000">
+                                <option value="150000">
+                                <option value="200000">
+                                <option value="250000">
+                            </datalist>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class ="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <label for="religion">RELIGION</label>
+                            <input list="religion" class="religion">
+                            <datalist id="religion" class="religion">
+                                <option value="Christian">
+                                <option value="Muslim">
+                                <option value="Hindu">
+                                <option value="Jewish">
+                                <option value="Buddhist">
+                                <option value="Scientology">
+                                <option value="Spiritual but not religious">
+                                <option value="Neiher religiousnor spiritual">
+                                <option value="Other">
+                                <option value="Prefer not to say">
+                            </datalist>
+                        </div>
 
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <label for="ethnicity">ETHNICITY</label>
+                            <input list="ethnicity" class="ethnicity">
+                            <datalist id="ethnicity" class="ethnicity">
+                                <option value="White / caucasion">
+                                <option value="Black / african descent">
+                                <option value="Hispanic or latino">
+                                <option value="Asian / pacific descent">
+                                <option value="Indian">
+                                <option value="Arabic / Middle Eastern">
+                                <option value="Native American">
+                                <option value="Other">
+                                <option value="Prefer not say">
+                            </datalist>
+                        </div>
 
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <label for="body_type">BODY TYPE</label>
+                            <input list="body-type" class="body-type">
+                            <datalist id="body-type" class="body-type">
+                                <option value="Skinny">
+                                <option value="Athletic">
+                                <option value="Average">
+                                <option value="Chubby">
+                                <option value="Prefer not say">
+                            </datalist>
+                        </div>
 
-                        <label for="annual-income">ANNUAL INCOME</label>
-                        <input list="annual-income" class="annual-income">
-                        <datalist id="annual-income" class="annual-income">
+                    </div>
 
-                            <option value="20000">
-                            <option value="40000">
-                            <option value="60000">
-                            <option value="80000">
-                            <option value="100000">
-                            <option value="150000">
-                            <option value="200000">
-                            <option value="250000">
+                    
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="has_kids">HAS KIDS</label>
+                            <input list="has-kids" class="has-kids">
+                            <datalist id="has-kids" class="has-kids">
+                                <option value="Yes">
+                                <option value="No">
+                            </datalist> 
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="wants_kids">WANTS KIDS</label>
+                            <input list="wants-kids" class="wants-kids">
+                            <datalist id="wants-kids" class="has-kids">
+                                <option value="Yes">
+                                <option value="No">
+                            </datalist>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="drink">DRINK</label>
+                            <input list="drinker" class="drinker">
+                            <datalist id="drinker" class="drinker">
+                                <option value="Yes">
+                                <option value="No">
+                                <option value="Occasionally">
+                            </datalist>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <label for="smoke">SMOKE</label>
+                            <input list="smoker" class="smoker">
+                            <datalist id="smoker" class="smoker">
+                                <option value="Yes">
+                                <option value="No">
+                            </datalist>
+                        </div>
+                    </div>
 
-                        </datalist>
-                        
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label for="about-me">ABOUT ME</label>
+                            <textarea id="about-me" class="about-me" rows="5" cols="40"> </textarea>
+                        </div>
+                    </div>
+                    
 
-                        <label for="religion">RELIGION</label>
-                        <input list="religion" class="religion">
-                        <datalist id="religion" class="religion">
-                            <option value="Christian">
-                            <option value="Muslim">
-                            <option value="Hindu">
-                            <option value="Jewish">
-                            <option value="Buddhist">
-                            <option value="Scientology">
-                            <option value="Spiritual but not religious">
-                            <option value="Neiher religiousnor spiritual">
-                            <option value="Other">
-                            <option value="Perfer not to say">
-                        </datalist>
+                    <label for="picture">PICTURE</label>
+                    <input type="file" accept="image/*" class="picture" placeholder="picture">
+                    
 
-
-                        <label for="ethnicity">ETHNICITY</label>
-                        <input list="ethnicity" class="ethnicity">
-                        <datalist id="ethnicity" class="ethnicity">
-                            <option value="White / caucasion">
-                            <option value="Black / african descent">
-                            <option value="Hispanic or latino">
-                            <option value="Asian / pacific descent">
-                            <option value="Indian">
-                            <option value="Arabic / Middle Eastern">
-                            <option value="Native American">
-                            <option value="Other">
-                            <option value="Perfer not say">
-                        </datalist>
-                        
-
-                        <label for="body_type">BODY TYPE</label>
-                        <input list="body-type" class="body-type">
-                        <datalist id="body-type" class="body-type">
-                            <option value="Skinny">
-                            <option value="Athletic">
-                            <option value="Average">
-                            <option value="Chubby">
-                            <option value="Perfer not say">
-                        </datalist>
-
-                        <label for="interest">INTEREST</label>
-                        <input type="text" id="interest" class="interests">
-                        
-
-
-                        <label for="has_kids">HAS KIDS</label>
-                        <input list="has-kids" class="has-kids">
-                        <datalist id="has-kids" class="has-kids">
-                            <option value="Yes">
-                            <option value="No">
-                        </datalist>
-
-                        <label for="wants_kids">WANTS KIDS</label>
-                        <input list="wants-kids" class="wants-kids">
-                        <datalist id="wants-kids" class="has-kids">
-                            <option value="Yes">
-                            <option value="No">
-                        </datalist>
-
-                        
-
-
-                        <label for="drink">DRINK</label>
-                        <input list="drinker" class="drinker">
-                        <datalist id="drinker" class="drinker">
-                            <option value="Yes">
-                            <option value="No">
-                            <option value="Occasionally">
-                        </datalist>
-
-                        <label for="smoke">SMOKE</label>
-                        <input list="smoker" class="smoker">
-                        <datalist id="smoker" class="smoker">
-                            <option value="Yes">
-                            <option value="No">
-                        </datalist>
-
-                        
-
-                        <label for="about_me">ABOUT ME</label>
-                        
-
-                        <textarea id="about-me" class="about-me" rows="5" cols="50"> </textarea>
-
-                        <label for="picture">PICTURE</label>
-                        <input type="file" accept="image/*" class="picture" placeholder="picture">
-                        
-
-                        <input type="submit" value="Sign Up">
-                    </form>
+                    <input type="submit" value="Sign Up">
+                
                 </form>
             </div>
 
