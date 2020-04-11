@@ -89,7 +89,10 @@ $(function () {
       $.ajax("/api/update", {
         type: "PUT",
         data: profile,
-      }).then(function () {
+      }).then(function (boolean) {
+        if (boolean === false) {
+          $(".email-valid").text("Emails must match!");
+        }
         console.log("updated user profile!");
       });
     }

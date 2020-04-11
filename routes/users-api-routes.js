@@ -150,6 +150,9 @@ module.exports = function (app) {
   // Route for updating user's has_profile value
   app.put("/api/update", function (req, res) {
     const username = req.body.email;
+    if (username !== req.user.username) {
+      res.send(false);
+    }
     const update = { has_profile: true };
     db.User.update(update, {
       where: { username: username },

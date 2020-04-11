@@ -8,6 +8,7 @@ function checkDate(dateOB) {
   const date = Date.now() / 1000;
   const birth = new Date(emptyArr[0], emptyArr[1], emptyArr[2]);
   const milliseconds = birth.getTime() / 1000;
+
   const difference = Math.floor((date - milliseconds) / (60 * 60 * 24 * 365));
 
   if (difference < 18) {
@@ -16,8 +17,10 @@ function checkDate(dateOB) {
   } else if (difference >= 18) {
     return true;
   } else {
-    $(".dob-valid").append("Please information in valid format");
-    return;
+    $(".dob-valid").append(
+      "Please put date of birth information in valid format YYYY-MM-DD"
+    );
+    return false;
   }
 }
 
