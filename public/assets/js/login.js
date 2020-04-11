@@ -30,7 +30,7 @@ $(function () {
               window.location.href = "/homepage";
             } else if (boolean === false) {
               console.log("Wrong username or password");
-              window.location.href = "/login-wrong";
+              $(".password-valid").text("Wrong username or password");
             }
           });
         }

@@ -4,6 +4,10 @@ function booleanConv(str) {
   return true;
 }
 
+// Cloudinary Set Up
+const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dm8lr2gza/upload";
+const CLOUDINARY_UPLOAD_PRESET = "ximakshh";
+
 $(function () {
   // Profile sign up event listener
   $(".profile-sign-up").on("submit", function (e) {
@@ -72,8 +76,8 @@ $(function () {
         smoker: booleanConv($(".smoker").val().trim()),
         drinker: booleanConv($(".drinker").val().trim()),
         about_me: $(".about-me").val().trim(),
-        picture: $(".picture").val(),
       };
+      console.log(profile);
       // Ajax post request
       $.ajax("/api/profiles", {
         type: "POST",
@@ -81,15 +85,52 @@ $(function () {
       }).then(function () {
         console.log("created new profile!");
       });
-
       // Ajax put request
       $.ajax("/api/update", {
         type: "PUT",
         data: profile,
       }).then(function () {
         console.log("updated user profile!");
-        window.location.href = "/login";
       });
     }
+  });
+
+  // Picture submit event
+  $(".picture").on("change", function (e) {
+    const file = e.target.files[0];
+    const fd = new FormData();
+    fd.append("file", file);
+    fd.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+
+    axios({
+      url: CLOUDINARY_URL,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      data: fd,
+    })
+      .then(function (res) {
+        console.log(res.data.secure_url);
+        const obj = {
+          email: $(".email").val().trim(),
+          url: res.data.secure_url,
+        };
+        $.ajax("/api/picture", {
+          type: "PUT",
+          data: obj,
+        }).then(function () {
+          console.log("Successfully saved picture information");
+        });
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
+  });
+
+  // Event Listener for completing sign up
+  $(".finish").on("submit", function (e) {
+    e.preventDefault();
+    window.location.href = "/login";
   });
 });

@@ -13,5 +13,3 @@ $(function () {
     window.location.href = "/map";
   });
 });
-
-// Functions
