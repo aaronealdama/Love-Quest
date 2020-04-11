@@ -1,4 +1,5 @@
 $(function () {
+  // Getting the user's information
   const url = window.location.href;
   const arr = url.split("/");
   const name = arr[arr.length - 1];
@@ -22,6 +23,11 @@ $(function () {
     e.preventDefault();
     window.location.href = "/map";
   });
+
+  // Chat Event listener
+  $(".chat").on("click", function () {
+    window.location.href = "/chat";
+  });
 });
 
 // Functions
@@ -36,7 +42,7 @@ function elementGenerator(element, classTitle, idTitle, src, text) {
 }
 
 function generateProfile(obj) {
-  const image = elementGenerator("image", "img", "profile-image", obj.picture);
+  const image = elementGenerator("img", "image", "profile-image", obj.picture);
   $(".image").append(image);
   $(".header").text(`${obj.first_name} ${obj.last_name}`);
   $(".location").text(`${obj.city}, ${obj.state}`);

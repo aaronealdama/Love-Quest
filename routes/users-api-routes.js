@@ -1,8 +1,6 @@
+// Models and middleware
 const db = require("../models");
 const passport = require("../config/passport");
-
-// MiddleWare
-const profile = require("../config/middleware/profile-auth");
 
 module.exports = function (app) {
   // API routes for accessing users
@@ -59,6 +57,7 @@ module.exports = function (app) {
 
   // Route for creating a user's profile
   app.post("/api/profiles", function (req, res) {
+    console.log(req.file);
     db.Profile.create(req.body).then(function (dbProfile) {
       res.json(dbProfile);
     });
@@ -141,6 +140,20 @@ module.exports = function (app) {
       where: { username: username },
     }).then(function (dbUser) {
       res.json(dbUser);
+    });
+  });
+
+  // Route for updating user's picture information
+  app.put("/api/picture", function (req, res) {
+    const email = req.body.email;
+    const url = req.body.url;
+    const update = { picture: url };
+    db.Profile.update(update, {
+      where: {
+        email: email,
+      },
+    }).then(function (dbProfile) {
+      res.json(dbProfile);
     });
   });
 
