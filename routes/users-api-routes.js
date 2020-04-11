@@ -88,9 +88,11 @@ module.exports = function (app) {
   app.post("/api/users/profiles", function (req, res) {
     const option = req.body.option;
     const value = req.body.value;
+    const gender = req.body.gender;
     db.Profile.findAll({
       where: {
         [option]: value,
+        sex: gender,
       },
     }).then(function (dbProfile) {
       let emptyArr = [];
@@ -126,6 +128,19 @@ module.exports = function (app) {
     db.Profile.findOne({
       where: {
         name: name,
+      },
+    }).then(function (dbProfile) {
+      res.send(dbProfile);
+    });
+  });
+
+  // Route for retrieving profile information
+  app.get("/api/profile", function (req, res) {
+    const email = req.user.username;
+    console.log(email);
+    db.Profile.findOne({
+      where: {
+        email: email,
       },
     }).then(function (dbProfile) {
       res.send(dbProfile);

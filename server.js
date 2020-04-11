@@ -1,5 +1,5 @@
 const express = require("express");
-// const session = require("express-session");
+const session = require("express-session");
 const http = require("http");
 const socketio = require("socket.io");
 
@@ -26,6 +26,9 @@ const bot = "Sir Charles III";
 
 // Run when the client connects
 io.on("connection", function (socket) {
+  console.log("New WS Connection...");
+
+  // When users join a room
   socket.on("joinRoom", function (username, room) {
     console.log(username, room);
     const user = userJoin(socket.id, username, room);
@@ -48,8 +51,6 @@ io.on("connection", function (socket) {
     });
   });
 
-  console.log("New WS Connection...");
-
   // Listening for chat message
   socket.on("chatMessage", function (msg) {
     console.log(msg);
@@ -59,6 +60,7 @@ io.on("connection", function (socket) {
     io.to(user.room).emit("message", formatMessage(user.username, msg));
   });
 
+  // Disconnecting
   socket.on("disconnect", function () {
     const user = userLeave(socket.id);
     if (user) {
@@ -77,13 +79,13 @@ io.on("connection", function (socket) {
 
 // Passport
 
-// const passport = require("./config/passport");
+const passport = require("./config/passport");
 
-// app.use(
-//   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-// );
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Express Handlebars
 

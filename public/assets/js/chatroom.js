@@ -26,11 +26,6 @@ socket.on("message", function (message) {
   document.querySelector(".chat-messages").scrollTop = document.querySelector(
     ".chat-messages"
   ).scrollHeight;
-
-  // Leave room
-  $(".leave").on("click", function () {
-    window.location.href = "/homepage";
-  });
 });
 
 // Event Listeners
@@ -43,6 +38,11 @@ $(".chat-form").on("submit", function (e) {
   socket.emit("chatMessage", msg);
 
   e.target.elements[0].value = "";
+});
+
+// Leave room
+$(".leave").on("click", function () {
+  window.location.href = "/homepage";
 });
 
 // Functions

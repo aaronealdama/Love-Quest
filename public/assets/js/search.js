@@ -34,6 +34,7 @@ function resultCreator(arr) {
   for (let i = 0; i < arr.length; i++) {
     const cardDiv = elementGenerator("div", "card");
     const image = elementGenerator("img", "image", arr[i].picture);
+    image.attr("style", "width:150px;height:150px");
     const cardBody = elementGenerator("div", "card-body");
     const header = elementGenerator(
       "h5",
@@ -58,6 +59,7 @@ $(function () {
   // Event Listeners
   $(".search-button").on("click", function () {
     const option = $(".options :selected").text();
+    const gender = $(".gender :selected").text();
     const wordArr = option.split(" ");
     let input = $(".input").val().trim();
     if (input.toLowerCase() === "no") {
@@ -66,6 +68,7 @@ $(function () {
     const word = wordsConv(wordArr);
     const obj = {
       option: word,
+      gender: gender,
       value: input,
     };
 
