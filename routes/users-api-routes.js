@@ -57,6 +57,7 @@ module.exports = function (app) {
 
   // Route for creating a user's profile
   app.post("/api/profiles", function (req, res) {
+    console.log(req.file);
     db.Profile.create(req.body).then(function (dbProfile) {
       res.json(dbProfile);
     });
@@ -148,13 +149,11 @@ module.exports = function (app) {
 
   // Route for updating user's has_profile value
   app.put("/api/update", function (req, res) {
-    console.log('hello')
     const username = req.body.email;
     const update = { has_profile: true };
     db.User.update(update, {
       where: { username: username },
     }).then(function (dbUser) {
-      console.log('hi')
       res.json(dbUser);
     });
   });
