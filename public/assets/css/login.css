@@ -76,6 +76,10 @@ html {
 
 /* chat css */
 
+.btn-success {
+    margin: 10px;
+}
+
 .msger {
     display: flex;
     flex-flow: column wrap;
@@ -97,6 +101,45 @@ html {
     border-bottom: var(--border);
     background: #eee;
     color: #666;
+    animation-name: chatcolor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border-radius: 10px 10px 0 0;
+}
+
+.msger-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: var(--border);
+    background: #eee;
+    color: #666;
+    animation-name: chatcolor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border-radius: 0 0 10px 10px;
+}
+
+.chat-main {
+    animation-name: chatbodycolor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    color: white;
+}
+
+.chat-sidebar {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.chat-messages {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.msger-header-title {
+    font-size: 25px;
+    color: white;
 }
 
 .msger-chat {
@@ -209,4 +252,41 @@ html {
 
 .msger-send-btn:hover {
     background: rgb(0, 180, 50);
+}
+
+@keyframes chatcolor {
+    0% {
+        top: 0px;
+        left: 0px;
+        background: #4169e1;
+    }
+    50% {
+        top: 0px;
+        left: 0px;
+        background: #1e90ff;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        background: #4169e1;
+    }
+}
+
+@keyframes chatbodycolor {
+    0% {
+        top: 0px;
+        left: 0px;
+        background: rgba(65, 105, 225, 0.5);
+        ;
+    }
+    50% {
+        top: 0px;
+        left: 0px;
+        background: rgba(30, 144, 255, 0.5);
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        background: rgba(65, 105, 225, 0.5);
+    }
 }
