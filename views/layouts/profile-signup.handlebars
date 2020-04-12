@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{#each css}}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css/{{this}}" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {{/each}}
+</head>
+<body>
+
+    <ul class="profile-outline"></ul>
+
+    {{{body}}}
+   
+    <script id="profile-template" type="text/x-handlebars-template">
+        {{#each user_profile}}
+            <li class="user_profile">
+
+                <img src="{{profilePic}}.jpg">
+                <form>
+                    <h2>{{name}}</h2>
+                    <h1>{{sex}}</h1>
+                    <h1>{{birthday}}</h1>
+                    <h1>{{marital_status}}</h1>
+                    <h1>{{height}}</h1>
+                    <h1>{{had_kid}}</h1>
+                    <h1>{{wanted_children}}</h1>
+                    <h1>{{education}}</h1>
+                    <h1>{{smoker}}</h1>
+                    <h1>{{drink}}</h1>
+                    <h1>{{race}}</h1>
+                    <h1>{{religion}}</h1>
+                    <h1>{{body-type}}</h1>
+                    <h1>{{about_me }}</h1>
+                </form>
+                
+            </li>
+            
+        {{/each}}
+    </script>
+
+
+</body>
+
+</html>
+

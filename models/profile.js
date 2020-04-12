@@ -90,10 +90,8 @@ module.exports = function (sequelize, DataTypes) {
       },
     },
     picture: {
-      type: DataTypes.BLOB,
-      // get: function () {
-      //   // return this.getDataValue("picture").toString("utf8");
-      // },
+      type: DataTypes.STRING,
+      defaultValue: null,
     },
   });
   return Profile;

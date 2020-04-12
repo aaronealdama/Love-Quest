@@ -1,54 +1,122 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">LOVEQUEST</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                Search
-            </button>
-        </form>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 logout">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
-                Logout
-            </button>
-        </form>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 map">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
-                Map
-            </button>
-        </form>
-    </div>
-</nav>
-
-<div class="row">
-    <div class="col-md-6 d-flex justify-content-center">
-        <div class="card">
-            <div class="card-body">
-                <div class="image"></div>
-                <h5 class="header card-title text-left"></h5>
-                <div class="about-me">
-                    <p class="para"></p>
-                </div>
-                <div class="icons">
-                    <span class="location"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <span class="birthdate"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
-                    <span class="marital-status"><i class="fa fa-heart" aria-hidden="true"></i></span>
-
-                </div>
+<div class="banner-area">
+    <div class="wrapper">
+        <div class="navigation">
+            <div class="logo">
+                LoveQuest
             </div>
+            <nav>
+                <a href="/homepage">Home</a>
+                <a href="/logout">Logout</a>
+                <a href="/chat">Chat</a>
+                <a href="/map">Map</a>
+                <a href="#">Contact Us</a>
+            </nav>
         </div>
+
+        <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img class="profile" alt="" style="width:150px;height:150px" />
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <h5 class="profile-name">
+                            </h5>
+                            <h6 class="profile-profession">
+                            </h6>
+                            <p class="proile-rating">Additional field <span>(Optional)</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                        aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                            </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Additional Section</p>
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a>
+                            <p>Additional Section 2</p>
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                {{!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>User Id</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Test</p>
+                                    </div>
+                                </div> --}}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="para-name"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="para-email"></p>
+                                    </div>
+                                </div>
+                                {{!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>123 456 7890</p>
+                                    </div>
+                                </div> --}}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Marital Status</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="para-marital"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </div>
 </div>
-
-
+<button class="btn btn-info chat">Chat</button>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -61,4 +129,5 @@
     crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script src="../../assets/js/profile-page.js"></script>
