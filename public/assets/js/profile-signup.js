@@ -54,7 +54,9 @@ $(function () {
       const profile = {
         first_name: $(".firstname").val().trim(),
         last_name: $(".lastname").val().trim(),
-        name: `${$(".firstname").val().trim()}${$(".lastname").val().trim()}`,
+        name: `${$(".firstname").val().trim()}${$(".lastname")
+          .val()
+          .trim()}`.toLowerCase(),
         email: $(".email").val().trim(),
         city: $(".city").val().trim(),
         state: $(".state").val().trim(),
@@ -89,7 +91,10 @@ $(function () {
       $.ajax("/api/update", {
         type: "PUT",
         data: profile,
-      }).then(function () {
+      }).then(function (boolean) {
+        if (boolean === false) {
+          $(".email-valid").text("Emails must match!");
+        }
         console.log("updated user profile!");
       });
     }
