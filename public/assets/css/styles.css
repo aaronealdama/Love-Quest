@@ -227,7 +227,7 @@ nav a {
 }
 
 
-/* homepage */
+/* homepage - search*/
 
 .content,
 .outer-border {
@@ -244,17 +244,6 @@ nav a {
     border: 2px solid black;
     position: relative;
     overflow: hidden;
-}
-
-.inner-border {
-    position: absolute;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-.inner-border::-webkit-scrollbar {
-    display: none;
 }
 
 
