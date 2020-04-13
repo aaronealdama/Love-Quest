@@ -1,19 +1,38 @@
-<div class="join-container">
-    <main class="join-main">
-        <form class="chat-form">
-            <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" name="username" class="username" placeholder="Enter username">
-            </div>
-            <div class="form-control">
-                <label for="room" class="room">Room</label>
-                <input type="text" name="roomname" class="roomname" placeholder="Enter a room name">
-            </div>
+<div class="container">
+    <br><br><br>
+    <div class=" col-lg-4 col-sm-12 d-flex justify-content-center">
+        <div class="card-body buttonForms" style="font-style: oblique;">
+            <div class="login-form pure-form pure-form-stacked">
+                <div class="join-container">
+                    <main class="join-main">
+                        <form class="chat-form">
+                            <div class="form-control">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" class="username" placeholder="Enter username">
+                            </div>
+                            <div class="form-control">
+                                <label for="room" class="room">Room</label>
+                                <input type="text" name="roomname" class="roomname" placeholder="Enter a room name">
+                            </div>
+                            <div class="form-control">
+                                <label for="contact" class="contact">Contact</label>
+                                <input type="text" class="contactname" placeholder="Who are you trying to contact?">
+                            </div>
 
-            <button type="submit" class="btn btn-primary">Start Chatting</button>
-        </form>
-    </main>
+                            <button type="submit" class="btn btn-primary">Start Chatting</button>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -26,4 +45,6 @@
     crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
 <script src="../../assets/js/chat.js"></script>

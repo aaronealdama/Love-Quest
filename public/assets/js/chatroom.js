@@ -42,7 +42,7 @@ $(".chat-form").on("submit", function (e) {
 
 // Leave room
 $(".leave").on("click", function () {
-  window.location.href = "/homepage";
+  window.close();
 });
 
 // Functions

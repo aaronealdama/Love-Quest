@@ -54,7 +54,9 @@ $(function () {
       const profile = {
         first_name: $(".firstname").val().trim(),
         last_name: $(".lastname").val().trim(),
-        name: `${$(".firstname").val().trim()}${$(".lastname").val().trim()}`,
+        name: `${$(".firstname").val().trim()}${$(".lastname")
+          .val()
+          .trim()}`.toLowerCase(),
         email: $(".email").val().trim(),
         city: $(".city").val().trim(),
         state: $(".state").val().trim(),

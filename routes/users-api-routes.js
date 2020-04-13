@@ -1,6 +1,18 @@
 // Models and middleware
 const db = require("../models");
 const passport = require("../config/passport");
+// const sgMail = require("@sendgrid/mail");
+// sgMail.setApiKey(
+//   "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"
+// );
+
+const {
+  userJoin,
+  getCurrentUser,
+  userLeave,
+  getRoomUsers,
+  userLength,
+} = require("../utils/users");
 
 module.exports = function (app) {
   // API routes for accessing users
@@ -110,15 +122,44 @@ module.exports = function (app) {
   app.post("/api/location", function (req, res) {
     const option = req.body.input;
     const location = req.body.location;
-
     db.Profile.findAll({
       where: {
         [option]: location,
       },
     }).then(function (dbProfile) {
-      res.send(dbProfile);
+      let emptyArr = [];
+      for (let i = 0; i < dbProfile.length; i++) {
+        if (dbProfile[i].email === req.user.username) continue;
+        emptyArr.push(dbProfile[i]);
+      }
+      res.send(emptyArr);
     });
   });
+
+  // Route to send emails
+  // app.post("/api/send-email", function (req, res) {
+  //   const to = req.body.to;
+  //   const from = req.body.from;
+  //   const user = req.body.user;
+  //   const room = req.body.room;
+  //   const msg = {
+  //     to: to,
+  //     from: from,
+  //     subject: "LoveQuester is trying to contact you",
+  //     text: `${user} is trying to contact you in room ${room}, join them!`,
+  //   };
+  //   sgMail.send(msg).then(
+  //     () => {},
+  //     (error) => {
+  //       console.error(error);
+
+  //       if (error.response) {
+  //         console.error(error.response.body);
+  //       }
+  //     }
+  //   );
+  //   res.end();
+  // });
 
   //Route for retrieving specific user
   // information
@@ -145,6 +186,29 @@ module.exports = function (app) {
     }).then(function (dbProfile) {
       res.send(dbProfile);
     });
+  });
+
+  // Route for getting another person's profile based on email
+  app.get("/api/profile/:email", function (req, res) {
+    const email = req.params.email;
+    db.Profile.findOne({
+      where: {
+        email: email,
+      },
+    }).then(function (dbProfile) {
+      res.send(dbProfile);
+    });
+  });
+
+  // Route for getting number of users
+  app.get("/api/users/length", function (req, res) {
+    const length = userLength();
+    console.log(length);
+    if (length === 0) {
+      res.send(true);
+    } else {
+      res.send(false);
+    }
   });
 
   // Route for updating user's has_profile value
@@ -175,9 +239,49 @@ module.exports = function (app) {
     });
   });
 
+  // Route for updating a profile
+  app.put("/api/update/profile", function (req, res) {
+    console.log(req.body);
+    const update = req.body;
+    const email = req.user.username;
+    db.Profile.update(update, {
+      where: {
+        email: email,
+      },
+    }).then(function (dbProfile) {
+      res.json(dbProfile);
+    });
+  });
+
+  // Route for updating lovequester field in Profile
+  app.put("/api/lovequester", function (req, res) {
+    const update = req.body;
+    const email = req.user.username;
+    db.Profile.update(update, {
+      where: {
+        email: email,
+      },
+    }).then(function (dbProfile) {
+      res.json(dbProfile);
+    });
+  });
+
   // Route for logging out
   app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
   });
 };
+
+// functions
+function sendEmail(to, from, user, room) {
+  const msg = {
+    to: to,
+    from: from,
+    subject: "LoveQuester is trying to contact you",
+    text: `${user} is trying to contact you in room ${room}, join them!`,
+  };
+  sgMail.send(msg).then((msg) => {
+    console.log(msg);
+  });
+}

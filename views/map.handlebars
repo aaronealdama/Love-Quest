@@ -100,6 +100,7 @@
             type: "POST",
             data: obj,
         }).then(function (data) {
+            console.log(data);
             let emptyArr = [];
             for (let i = 0; i < data.length; i++) {
                 const settings = {

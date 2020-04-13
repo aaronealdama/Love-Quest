@@ -1,7 +1,28 @@
-<div class="chat-container">
-    <header class="chat-header">
-        <button class="btn btn-danger leave">Leave Room</button>
+<section class="msger">
+    <header class="msger-header">
+        <div class="msger-header-title">
+            Chat <svg class="bi bi-chat-square-dots-fill" width="1em" height="1em" viewBox="0 0 16 16"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M0 2a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-2.5a1 1 0 00-.8.4l-1.9 2.533a1 1 0 01-1.6 0L5.3 12.4a1 1 0 00-.8-.4H2a2 2 0 01-2-2V2zm5 4a1 1 0 11-2 0 1 1 0 012 0zm4 0a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="msger-header-options">
+            <button class="btn btn-danger leave">Leave Room <svg class="bi bi-box-arrow-right" width="1em" height="1em"
+                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M11.646 11.354a.5.5 0 010-.708L14.293 8l-2.647-2.646a.5.5 0 01.708-.708l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M4.5 8a.5.5 0 01.5-.5h9a.5.5 0 010 1H5a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M2 13.5A1.5 1.5 0 01.5 12V4A1.5 1.5 0 012 2.5h7A1.5 1.5 0 0110.5 4v1.5a.5.5 0 01-1 0V4a.5.5 0 00-.5-.5H2a.5.5 0 00-.5.5v8a.5.5 0 00.5.5h7a.5.5 0 00.5-.5v-1.5a.5.5 0 011 0V12A1.5 1.5 0 019 13.5H2z"
+                        clip-rule="evenodd" />
+                </svg></button>
+        </div>
     </header>
+
     <main class="chat-main">
         <div class="chat-sidebar">
             <h2 class="room-name"></h2>
@@ -12,13 +33,24 @@
 
         </div>
     </main>
-    <div class="chat-form-container">
+
+    <footer class="msger-footer">
         <form class="chat-form">
-            <input type="text" class="message" placeholder="Enter Message" autocomplete="off">
-            <button class="btn">Send</button>
+            <input type="text" class="message" style="background-color: #ddd; border: 0px; padding: 13px; width: 740px"
+                placeholder="Enter Message" autocomplete="off">
+            <button class="btn btn-success">Send <svg class="bi bi-cursor" width="1em" height="1em" viewBox="0 0 16 16"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M14.082 2.182a.5.5 0 01.103.557L8.528 15.467a.5.5 0 01-.917-.007L5.57 10.694.803 8.652a.5.5 0 01-.006-.916l12.728-5.657a.5.5 0 01.556.103zM2.25 8.184l3.897 1.67a.5.5 0 01.262.263l1.67 3.897L12.743 3.52 2.25 8.184z"
+                        clip-rule="evenodd" />
+                </svg></button>
         </form>
-    </div>
-</div>
+    </footer>
+
+</section>
+
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
