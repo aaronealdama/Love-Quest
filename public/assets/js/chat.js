@@ -3,6 +3,7 @@ $(function () {
   $(".chat-form").on("submit", function (e) {
     e.preventDefault();
 
+    // Save this for later if you can figure out the email functionality
     // const name = $(".contactname")
     //   .val()
     //   .trim()
