@@ -16,14 +16,13 @@
     <div class="row profileSign">
 
         <div class="col-lg-12">
-            <h1>Profile Sign Up</h1>
+            <h1>Profile Update</h1>
         </div>
 
         <div class="col-lg-12 col-md-10 col-sm-10 justify-content-center">
 
             <div class="card-body">
-                <form action="/profile-signup" method="POST" id="profile-signup"
-                    class="profile-sign-up pure-form pure-form-stacked">
+                <form id="update-profile" class="profile-update pure-form pure-form-stacked">
 
 
                     <div class="row">
@@ -254,26 +253,16 @@
                     </div>
 
 
-                    {{!-- <label for="picture">PICTURE</label>
-                    <input type="file" accept="image/*" class="picture" placeholder="picture"> --}}
+                    <label for="picture">UPDATE PICTURE</label>
+                    <input type="file" accept="image/*" class="picture" placeholder="picture">
 
                     <label for="interest">INTEREST</label>
                     <input type="text" id="interest" class="interests">
 
-                    <input type="submit" value="Make Profile">
-
+                    <input type="submit" value="Update Profile">
                 </form>
-
-                <form class="finish">
-                    <label for="picture">Picture</label>
-                    <input type="file" class="picture">
-                    <input type="submit" value="Complete Sign Up">
-                </form>
-
             </div>
-
         </div>
-
     </div>
 </div>
 
@@ -293,4 +282,4 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="../../assets/js/profile-signup.js"></script>
+<script src="../../assets/js/profile-update.js"></script>

@@ -24,9 +24,14 @@ function getRoomUsers(room) {
   return users.filter((user) => user.room === room);
 }
 
+function userLength() {
+  return users.length;
+}
+
 module.exports = {
   userJoin,
   getCurrentUser,
   userLeave,
   getRoomUsers,
+  userLength,
 };

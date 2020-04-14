@@ -93,6 +93,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: null,
     },
+    lovequester: {
+      type: DataTypes.STRING,
+      defaultValue: null,
+    },
   });
   return Profile;
 };
