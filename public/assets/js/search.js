@@ -42,7 +42,9 @@ function resultCreator(arr) {
       "",
       `${arr[i].first_name} ${arr[i].last_name}`
     );
+    header.attr("style", "color: black;");
     const para = elementGenerator("p", "card-text", "", arr[i].about_me);
+    para.attr("style", "color: black");
     const button = elementGenerator(
       "button",
       "btn btn-primary view-button",
