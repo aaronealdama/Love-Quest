@@ -53,27 +53,26 @@ function elementGenerator(element, classTitle, src, text) {
 }
 
 function generateLQ(data) {
-  console.log(data);
   const cardDiv = elementGenerator("div", "card");
-  const image = elementGenerator("img", "image", data.picture);
-  const cardBody = elementGenerator("div", "card-body");
-  const cardTitle = elementGenerator(
-    "h5",
-    "card-title",
-    "",
-    `${data.first_name} ${data.last_name}`
-  );
-  const para = elementGenerator("p", "card-text", "", data.about_me);
-  const link = elementGenerator(
-    "a",
-    "btn btn-danger remove-lovequester",
-    "",
-    "Remove LoveQuester"
-  );
-
-  cardBody.append(cardTitle, para, link);
-  cardDiv.append(image, cardBody);
-  $(".lovequester").append(cardDiv);
+    const image = elementGenerator("img", "image", data.picture);
+    image.attr("style", "width:217px;height:217px");
+    const cardBody = elementGenerator("div", "card-body");
+    const header = elementGenerator(
+      "h5",
+      "card-title header",
+      "",
+      `${data.first_name} ${data.last_name}`
+    );
+    const para = elementGenerator("p", "card-text", "", data.about_me);
+    const button = elementGenerator(
+      "button",
+      "btn btn-danger remove-lovequester",
+      "",
+      "Remove LoveQuester"
+    );
+    cardBody.append(header, para, button);
+    cardDiv.append(image, cardBody);
+    $(".lovequester").append(cardDiv);
 } // Function to generate lovequester info
 
 function removeLQ() {

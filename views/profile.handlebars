@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+        integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+
+
 <div class="banner-area">
     <div class="wrapper">
         <div class="navigation">
@@ -7,64 +21,47 @@
             <nav>
                 <a href="/homepage">Home</a>
                 <a href="/logout">Logout</a>
-                <a href="/chat" target="popup" onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
                 <a href="/map">Map</a>
+                <a href="/chat" target="popup" onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
                 <a href="/contact">Contact Us</a>
             </nav>
         </div>
 
         <div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <img class="profile" alt="" style="width:150px;height:150px" />
-                        </div>
-                        {{!-- folloe button --}}
-                        <div class="follow lovequester">
-                            <button class="btn btn-info lovequester-btn">Make LoveQuester</button>
-                        </div>
 
+            <div class="row">
+                <div class="col-md">
+                    <div class="profile-img">
+                        <img class="profile" alt="" style="width:150px;height:150px" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                            <h5 class="profile-name">
-                            </h5>
-                            <h6 class="profile-profession">
-                            </h6>
-                            <p class="proile-rating">Additional field <span>(Optional)</span></p>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                        aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                            </li> -->
-                            </ul>
-                        </div>
-                    </div>
-
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-work">
-                            <p>Additional Section</p>
-                            <a href="">Redirect Link</a><br />
-                            <a href="">Redirect Link</a><br />
-                            <a href="">Redirect Link</a>
-                            <p>Additional Section 2</p>
-                            <a href="">Redirect Link</a><br />
-                            <a href="">Redirect Link</a><br />
-                            <a href="">Redirect Link</a><br />
-                            <a href="">Redirect Link</a><br />
-                            <a href="">Redirect Link</a><br />
-                        </div>
+            </div>
+
+            <div class="row" style="text-align: center;">
+                <div class="col-md">
+                    <div class="profile-head">
+                        <br>
+                        <h5 class="welcome">
+                        </h5>
+                        <p class="about-me"></p>
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                {{!-- <div class="row">
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            {{!-- <div class="row">
                                     <div class="col-md-6">
                                         <label>User Id</label>
                                     </div>
@@ -72,23 +69,23 @@
                                         <p>Test</p>
                                     </div>
                                 </div> --}}
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Name</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="para-name"></p>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Email</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="para-email"></p>
-                                    </div>
+                                <div class="col-md-6">
+                                    <p class="para-name"></p>
                                 </div>
-                                {{!-- <div class="row">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="para-email"></p>
+                                </div>
+                            </div>
+                            {{!-- <div class="row">
                                     <div class="col-md-6">
                                         <label>Phone</label>
                                     </div>
@@ -96,26 +93,158 @@
                                         <p>123 456 7890</p>
                                     </div>
                                 </div> --}}
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Marital Status</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="para-marital"></p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Marital Status</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="para-marital"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>Account Settings:</p>
+                        <div class="row">
+                            {{!-- <div class="col-md"> --}}
+                            <input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                            {{!-- </div> --}}
+                        </div>
+                        {{!-- <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a><br />
+                            <a href="">Redirect Link</a> --}}
+                    </div>
+                </div>
+
+
+
+                <!-- search -->
+                <div class="container search-container">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md">
+                            <div class="profile-head">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">Search for someone
+                                            !</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <select class="form-control options">
+                                <option>Marital Status</option>
+                                <option>Height</option>
+                                <option>Has Kids</option>
+                                <option>Wants Kids</option>
+                                <option>Education</option>
+                                <option>Smoker</option>
+                                <option>Drinker</option>
+                                <option>Ethnicity</option>
+                                <option>Religion</option>
+                                <option>Body Type</option>
+                                <option>Occupation</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <select class="form-control gender">
+                                <option>MAN</option>
+                                <option>WOMAN</option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="col-lg-6">
+
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Search for LoveQuesters
+                                </div>
+                                <div class="card-body">
+                                    <input type="text" id="character-search" class="form-control input">
+                                    <br>
+                                    <div class="text-right">
+                                        <button class="btn btn-primary btn-md search-button" id="search-btn">
+                                            <span class="fa fa-search"></span> Find my forever LoveQuester
+                                            !</button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
 
+                <div class="container lovequester-container">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md">
+                            <div class="profile-head">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">Your LoveQuester!
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="lovequester">
 
                         </div>
                     </div>
                 </div>
-            </form>
+
+                <div class="container search-container">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md">
+                            <div class="profile-head">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">LoveQuesters</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    LoveQuester Details
+                                </div>
+
+                                <div class="outer-border">
+                                    <div style="overflow-y: scroll;" class="inner-border">
+                                        <div class="content">
+                                            <div class="results" id="well-section">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- search -->
+            </div>
         </div>
 
     </div>
 </div>
-<button class="btn btn-info chat">Chat</button>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -128,5 +257,5 @@
     crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script src="../../assets/js/profile-page.js"></script>
+<script src="../../assets/js/homepage.js"></script>
+<script src="../../assets/js/search.js"></script>
