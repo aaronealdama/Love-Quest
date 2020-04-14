@@ -1,32 +1,41 @@
-<div class="navigation">
-    <div class="logo">
-        LoveQuest
-    </div>
-    <nav>
-        <a href="/homepage">Home</a>
-        <a href="/logout">Logout</a>
-        <a href="/chat">Chat</a>
-        <a href="#">Contact Us</a>
-    </nav>
-</div>
 
-<div class="container">
-    <div class="row">
-        <form class="search-form">
-            <div class="col-md-6">
+
+<div class="banner-area">
+            <div class="wrapper">
+                <div class="navigation">
+                    <div class="logo">
+                        LoveQuest
+                    </div>
+                    <nav>
+                        <a href="/homepage">Home</a>
+                        <a href="/chat" target="popup" onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
+                        <a href="/contact">Contact Us</a>
+                        <a href="/logout">Logout</a>
+                    </nav>
+                </div>
+            </div>
+</div>   
+<br>
+
+    <form class="search-form">
+        <div class="row">
+            <div class="col-sm-1">
                 <select class="form-control type">
                     <option>City</option>
                     <option>Zip Code</option>
                 </select>
             </div>
-            <div class="col-md-6">
+            <div class="col-sm">
                 <input type="text" class="location">
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
 
-    </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+    </form>
+
 </div>
+
+<br>
+
 
 <div id="map"></div>
 
