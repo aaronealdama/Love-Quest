@@ -46,7 +46,18 @@ module.exports = function (app) {
   });
 
   app.get("/user/:name", profile, function (req, res) {
-    res.render("profile");
+    const name = req.params.name;
+    db.Profile.findOne({
+      where: {
+        name: name,
+      },
+    }).then(function (dbProfile) {
+      if (dbProfile === null) {
+        res.send("Account doesn't exist");
+      } else {
+        res.render("profile");
+      }
+    });
   });
 
   app.get("/map", profile, function (req, res) {

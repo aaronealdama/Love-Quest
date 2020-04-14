@@ -223,7 +223,7 @@ nav a {
   color: #0062cc;
 }
 
-/* homepage */
+/* homepage - search*/
 
 .content,
 .outer-border {
@@ -231,7 +231,7 @@ nav a {
   height: 150px;
   text-align: justify;
   background-color: whitesmoke;
-  color: white;
+  color: black;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -240,17 +240,6 @@ nav a {
   border: 2px solid black;
   position: relative;
   overflow: hidden;
-}
-
-.inner-border {
-  position: absolute;
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.inner-border::-webkit-scrollbar {
-  display: none;
 }
 
 /* homepage tab navigate */
