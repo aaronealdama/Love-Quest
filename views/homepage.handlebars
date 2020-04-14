@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
-        <title>Home</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <title>Home</title>
+</head>
+
 </html>
 
-<body>           
+<body>
     <nav class="navbar navbar-expand-lg transparent navbar-collapse navbar-dark bg-dark">
         <a class="navbar-brand logo" href="#">
-           <img src="/assets/css/lovequestlogo.png"  width="60" height="40"> LoveQuest
+            <img src="/assets/css/lovequestlogo.png" width="60" height="40"> LoveQuest
         </a>
 
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarHamburger">
@@ -36,15 +38,16 @@
                     <a class="nav-link active" href="/map">Map</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/chat" target="popup" onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
+                    <a class="nav-link active" href="/chat" target="popup"
+                        onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/contact">Contact Us</a>
                 </li>
             </ul>
         </div>
-        
-        
+
+
     </nav>
 
 
@@ -55,7 +58,7 @@
                 <div class="profile-img justify-content-center">
                     <img class="profile" alt="" style="width:150px;height:150px" />
                 </div>
-                <input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                <input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
             </div>
 
         </div>
@@ -69,7 +72,8 @@
                     <p class="about-me"></p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active love-details" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">About</a>
+                            <a class="nav-link active love-details" id="home-tab" data-toggle="tab" role="tab"
+                                aria-controls="home" aria-selected="true">About</a>
                         </li>
                     </ul>
                 </div>
@@ -83,179 +87,175 @@
 
             <div class="col-md-6">
                 <div class="tab-content profile-tab infoBox" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Name</label>
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="para-name"></p>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <p class="para-name"></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="para-email"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Email</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="para-email"></p>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Marital Status</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="para-marital"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                
-            </div>
-        </div>
-
-        <div class="lovequester"></div>
-
-
-
-
-        <!-- search -->
-        <div class="container">
-            <div class="row" style="text-align: center;">
-                <div class="col-md">
-                    <div class="profile-head">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active love-details" id="home-tab" data-toggle="tab"
-                                    role="tab" aria-controls="home" aria-selected="true">Search for someone!
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-lg-6 col-sm-12">
-                    <select class="form-control options">
-                        <option>Marital Status</option>
-                        <option>Height</option>
-                        <option>Has Kids</option>
-                        <option>Wants Kids</option>
-                        <option>Education</option>
-                        <option>Smoker</option>
-                        <option>Drinker</option>
-                        <option>Ethnicity</option>
-                        <option>Religion</option>
-                        <option>Body Type</option>
-                        <option>Occupation</option>
-                    </select>
-
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12">
-                            <select class="form-control gender">
-                                <option>MAN</option>
-                                <option>WOMAN</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6">
-
-                    <div class="card md-4">
-                        <div class="card-header love-details">
-                            Search for LoveQuesters
-                        </div>
-                        <div class="card-body">
-                            <input type="text" id="character-search" class="form-control input">
-                            <br>
-                            <div class="text-right">
-                                <button class="btn btn-primary btn-md search-button" id="search-btn">
-                                    <span class="fa fa-search"></span> Find my forever LoveQuester!
-                                </button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Marital Status</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="para-marital"></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <br>
 
-                <div class="container lovequester-container">
-                    <div class="row" style="text-align: center;">
-                        <div class="col-md">
-                            <div class="profile-head">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                                            role="tab" aria-controls="home" aria-selected="true">Your LoveQuester!
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="lovequester">
+                <div class="col-lg-6 col-md-6 col-sm-6">
 
+                </div>
+            </div>
+
+
+            <!-- search -->
+            <div class="container">
+                <div class="row search-container" style="text-align: center;">
+                    <div class="col-md">
+                        <div class="profile-head">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active love-details" id="home-tab" data-toggle="tab" role="tab"
+                                        aria-controls="home" aria-selected="true">Search for someone!
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <div class="row">
 
-                <div class="container search-container">
-                    <div class="row" style="text-align: center;">
-                        <div class="col-md">
-                            <div class="profile-head">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                                            role="tab" aria-controls="home" aria-selected="true">LoveQuesters</a>
-                                    </li>
-                                </ul>
+                    <div class="col-lg-6 col-sm-12 search-container">
+                        <select class="form-control options">
+                            <option>Marital Status</option>
+                            <option>Height</option>
+                            <option>Has Kids</option>
+                            <option>Wants Kids</option>
+                            <option>Education</option>
+                            <option>Smoker</option>
+                            <option>Drinker</option>
+                            <option>Ethnicity</option>
+                            <option>Religion</option>
+                            <option>Body Type</option>
+                            <option>Occupation</option>
+                        </select>
+
+                        <div class="row search-container">
+                            <div class="col-lg-12 col-sm-12">
+                                <select class="form-control gender">
+                                    <option>MAN</option>
+                                    <option>WOMAN</option>
+                                </select>
                             </div>
                         </div>
                     </div>
 
-            <div class="row">
-                <div class="col-lg-12 questDetails">
-                    <div class="card">
-                        <div class="card-header love-details">
-                            LoveQuester Details
+
+                    <div class="col-lg-6 search-container">
+
+                        <div class="card md-4">
+                            <div class="card-header love-details">
+                                Search for LoveQuesters
+                            </div>
+                            <div class="card-body">
+                                <input type="text" id="character-search" class="form-control input">
+                                <br>
+                                <div class="text-right">
+                                    <button class="btn btn-primary btn-md search-button" id="search-btn">
+                                        <span class="fa fa-search"></span> Find my forever LoveQuester!
+                                    </button>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <br>
 
-                                <div class="outer-border">
-                                    <div style="overflow-y: scroll;" class="inner-border">
-                                        <div class="content">
-                                            <div class="results" id="well-section">
+                    <div class="container lovequester-container">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-md">
+                                <div class="profile-head">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                                role="tab" aria-controls="home" aria-selected="true">Your LoveQuester!
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="align-items: center; justify-content: center; position: relative;">
+                            <div class="lovequester" style="justify-content: center; margin: 20px;">
 
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container search-container">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-md">
+                                <div class="profile-head">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                                role="tab" aria-controls="home" aria-selected="true">LoveQuesters</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="row search-container">
+                            <div class="col-lg-12 questDetails">
+                                <div class="card">
+                                    <div class="card-header love-details">
+                                        LoveQuester Details
+                                    </div>
+
+                                    <div class="outer-border">
+                                        <div style="overflow-y: scroll;" class="inner-border">
+                                            <div class="content">
+                                                <div class="results" id="well-section">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- search -->
                 </div>
-            </div>
-        </div>
-        <!-- search -->
-    </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-    <script src="../../assets/js/homepage.js"></script>
-    <script src="../../assets/js/search.js"></script>
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous"></script>
+                <script src="https://code.jquery.com/jquery-3.4.1.js"
+                    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+                <script src="../../assets/js/homepage.js"></script>
+                <script src="../../assets/js/search.js"></script>
 </body>
