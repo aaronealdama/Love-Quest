@@ -1,15 +1,25 @@
-// Generating lovequester data if present
+// Adding the link dynamically
+var link = document.createElement("link");
+link.setAttribute("rel", "stylesheet");
+link.setAttribute("type", "text/css");
+link.setAttribute("href", "../../assets/css/styles.css");
+document.getElementsByTagName("head")[0].appendChild(link);
+
+// Search and LoveQuester container stuff
+$(".lovequester-container").hide();
+
 $.ajax("/api/profile", {
   type: "GET",
 }).then(function (data) {
   if (data.lovequester !== null) {
     const lovequester = data.lovequester;
-
     // Ajax call to get lovequester information
     $.ajax(`/api/profile/${lovequester}`, {
       type: "GET",
     }).then(function (data) {
       generateLQ(data);
+      $(".lovequester-container").show();
+      $(".search-container").hide();
     });
   }
 });
