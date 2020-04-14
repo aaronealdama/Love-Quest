@@ -1,26 +1,26 @@
 {
-    "development": {
-        "username": "root",
-        "password": "Karceo1024!",
-        "database": "userdb",
-        "host": "127.0.0.1",
-        "port": 3306,
-        "dialect": "mysql"
-    },
-    "test": {
-        "username": "root",
-        "password": "Karceo1024!",
-        "database": "database_test",
-        "host": "127.0.0.1",
-        "port": 3306,
-        "dialect": "mysql"
-    },
-    "production": {
-        "username": "root",
-        "password": "Karceo1024!",
-        "database": "database_production",
-        "host": "127.0.0.1",
-        "port": 3306,
-        "dialect": "mysql"
-    }
+  "development": {
+    "username": "root",
+    "password": "Acegunner145",
+    "database": "userdb",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Acegunner145",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Acegunner145",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  }
 }

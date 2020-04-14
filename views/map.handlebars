@@ -1,32 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">LOVEQUEST</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                Search
-            </button>
-        </form>
+<div class="navigation">
+    <div class="logo">
+        LoveQuest
     </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 logout">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
-                Logout
-            </button>
-        </form>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 map">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
-                Map
-            </button>
-        </form>
-    </div>
-</nav>
+    <nav>
+        <a href="/homepage">Home</a>
+        <a href="/logout">Logout</a>
+        <a href="/chat">Chat</a>
+        <a href="#">Contact Us</a>
+    </nav>
+</div>
 
 <div class="container">
     <div class="row">
@@ -64,7 +46,6 @@
 <script>
 
     function initMap(arr, data) {
-        console.log(arr);
         var map = new google.maps.Map(document.getElementById("map"), {
             center: {
                 lat: 31.51073,
@@ -119,6 +100,7 @@
             type: "POST",
             data: obj,
         }).then(function (data) {
+            console.log(data);
             let emptyArr = [];
             for (let i = 0; i < data.length; i++) {
                 const settings = {

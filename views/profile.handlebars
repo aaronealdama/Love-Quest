@@ -7,9 +7,9 @@
             <nav>
                 <a href="/homepage">Home</a>
                 <a href="/logout">Logout</a>
-                <a href="/chat">Chat</a>
+                <a href="/chat" target="popup" onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
                 <a href="/map">Map</a>
-                <a href="#">Contact Us</a>
+                <a href="/contact">Contact Us</a>
             </nav>
         </div>
 
@@ -19,11 +19,12 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img class="profile" alt="" style="width:150px;height:150px" />
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file" />
-                            </div>
                         </div>
+                        {{!-- folloe button --}}
+                        <div class="follow lovequester">
+                            <div><input type="button" class="icon-heart-empty lovequester-btn">LoveQuester!</div>
+                        </div>
+
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
@@ -43,9 +44,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-md-4">
