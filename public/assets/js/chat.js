@@ -3,12 +3,12 @@ $(function () {
   $(".chat-form").on("submit", function (e) {
     e.preventDefault();
 
-    const name = $(".contactname")
-      .val()
-      .trim()
-      .split(" ")
-      .join("")
-      .toLowerCase();
+    // const name = $(".contactname")
+    //   .val()
+    //   .trim()
+    //   .split(" ")
+    //   .join("")
+    //   .toLowerCase();
     const room = $(".roomname").val().trim();
 
     // Ajax call to get users length
