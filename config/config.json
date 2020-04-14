@@ -18,7 +18,7 @@
   "production": {
     "username": "root",
     "password": "Acegunner145",
-    "database": "database_production",
+    "database": "usersdb",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
