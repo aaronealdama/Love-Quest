@@ -52,6 +52,7 @@ function generateLQ(data) {
   console.log(data);
   const cardDiv = elementGenerator("div", "card");
   const image = elementGenerator("img", "image", data.picture);
+  image.attr("style", "width:217px;height:217px");
   const cardBody = elementGenerator("div", "card-body");
   const cardTitle = elementGenerator(
     "h5",
@@ -59,7 +60,9 @@ function generateLQ(data) {
     "",
     `${data.first_name} ${data.last_name}`
   );
+  cardTitle.attr("style", "color: purple;");
   const para = elementGenerator("p", "card-text", "", data.about_me);
+  para.attr("style", "color: rebeccapurple;");
   const link = elementGenerator(
     "a",
     "btn btn-danger remove-lovequester",

@@ -1,10 +1,3 @@
-// Adding the link dynamically
-var link = document.createElement("link");
-link.setAttribute("rel", "stylesheet");
-link.setAttribute("type", "text/css");
-link.setAttribute("href", "../../assets/css/styles.css");
-document.getElementsByTagName("head")[0].appendChild(link);
-
 // Hiding the love quester button
 $(".lovequester").hide();
 
@@ -58,6 +51,7 @@ function generateProfile(obj) {
   $(".para-name").text(`${obj.first_name} ${obj.last_name}`);
   $(".para-email").text(obj.email);
   $(".para-marital").text(obj.marital_status);
+  $(".about-me").text(obj.about_me);
 }
 
 //Follow Button Effect
