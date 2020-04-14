@@ -25,9 +25,6 @@ $(function () {
     $(".welcome").text(`Welcome Back, ${data.first_name}!`);
     $(".about-me").text(data.about_me);
     $(".profile").attr("src", data.picture);
-    console.log("hi");
-    console.log($(".profile").attr("src"));
-    console.log(data.picture);
     $(".para-name").text(`${data.first_name} ${data.last_name}`);
     $(".para-email").text(data.email);
     $(".para-marital").text(data.marital_status);
