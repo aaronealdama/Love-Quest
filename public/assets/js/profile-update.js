@@ -1,3 +1,7 @@
+// Cloudinary Set Up
+const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dm8lr2gza/upload";
+const CLOUDINARY_UPLOAD_PRESET = "ximakshh";
+
 $(function () {
   $.ajax("/api/profile", {
     type: "GET",
