@@ -255,6 +255,7 @@ module.exports = function (app) {
 
   // Route for updating lovequester field in Profile
   app.put("/api/lovequester", function (req, res) {
+    console.log(req.body);
     const update = req.body;
     const email = req.user.username;
     db.Profile.update(update, {
@@ -272,16 +273,3 @@ module.exports = function (app) {
     res.redirect("/");
   });
 };
-
-// functions
-function sendEmail(to, from, user, room) {
-  const msg = {
-    to: to,
-    from: from,
-    subject: "LoveQuester is trying to contact you",
-    text: `${user} is trying to contact you in room ${room}, join them!`,
-  };
-  sgMail.send(msg).then((msg) => {
-    console.log(msg);
-  });
-}

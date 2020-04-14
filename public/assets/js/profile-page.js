@@ -11,7 +11,7 @@ $(".lovequester").hide();
 $.ajax("/api/profile", {
   type: "GET",
 }).then(function (data) {
-  if (data.lovequester === null) {
+  if (data.lovequester === null || data.lovequester === "") {
     $(".lovequester").show();
   }
 });
