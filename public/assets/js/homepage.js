@@ -1,10 +1,3 @@
-// Adding the link dynamically
-var link = document.createElement("link");
-link.setAttribute("rel", "stylesheet");
-link.setAttribute("type", "text/css");
-link.setAttribute("href", "../../assets/css/styles.css");
-document.getElementsByTagName("head")[0].appendChild(link);
-
 // Search and LoveQuester container stuff
 $(".lovequester-container").hide();
 
@@ -32,6 +25,9 @@ $(function () {
     $(".welcome").text(`Welcome Back, ${data.first_name}!`);
     $(".about-me").text(data.about_me);
     $(".profile").attr("src", data.picture);
+    console.log("hi");
+    console.log($(".profile").attr("src"));
+    console.log(data.picture);
     $(".para-name").text(`${data.first_name} ${data.last_name}`);
     $(".para-email").text(data.email);
     $(".para-marital").text(data.marital_status);
