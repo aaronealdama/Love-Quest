@@ -1,128 +1,174 @@
-<div class="navigation">
-    <div class="logo">
-        LoveQuest
-    </div>
-    <nav>
-        <a href="/homepage">Home</a>
-        <a href="/logout">Logout</a>
-        <a href="/chat">Chat</a>
-        <a href="#">Contact Us</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Map</title>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg transparent navbar-collapse navbar-dark bg-dark">
+        <a class="navbar-brand logo" href="#">
+           <img src="/assets/css/lovequestlogo.png"  width="60" height="40"> LoveQuest
+        </a>
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarHamburger">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarHamburger">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/homepage">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/map">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/chat" target="popup" onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        
+        
     </nav>
-</div>
 
-<div class="container">
-    <div class="row">
-        <form class="search-form">
-            <div class="col-md-6">
-                <select class="form-control type">
-                    <option>City</option>
-                    <option>Zip Code</option>
-                </select>
+    <div class="container">
+        <div class="row parameterSearch">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <form class="search-form">
+                    <select class="form-control type">
+                        <option>City</option>
+                        <option>Zip Code</option>
+                    </select>
+                </form>
             </div>
-            <div class="col-md-6">
-                <input type="text" class="location">
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
 
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <form class="search-form">
+                    <input type="text" class="form-control location" col="40">
+                    
+                </form>
+            </div>
+           
+           <div class="col-lg-2 col-md-2 col-sm-8">
+               <button type="submit" class="btn btn-primary completeSignup">Search</button>
+           </div>
+        </div>
     </div>
-</div>
 
-<div id="map"></div>
+    <div id="map"></div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_qAjXm4jKnYgletpSaY2GiQA5hMQAtk4&callback=initMap"></script>
-<script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_qAjXm4jKnYgletpSaY2GiQA5hMQAtk4&callback=initMap"></script>
+    <script>
 
-    function initMap(arr, data) {
-        var map = new google.maps.Map(document.getElementById("map"), {
-            center: {
-                lat: 31.51073,
-                lng: -96.4247,
-            },
-            zoom: 6,
-        });
+        function initMap(arr, data) {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: 31.51073,
+                    lng: -96.4247,
+                },
+                zoom: 6,
+            });
 
-        if (arr !== null && data !== null) {
-            for (let i = 0; i < arr.length; i++) {
-                var content = `<div class="card" style="width: 18rem;">
-  <img src="${data[i].picture}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${data[i].first_name} ${data[i].last_name}</h5>
-    <p class="card-text">${data[i].about_me}</p>
-    <a href="http://localhost:8080/user/${data[i].name}" class="btn btn-primary">View their profile</a>
-  </div>
-</div>`
-                // Marker generated
-                var marker = new google.maps.Marker({
-                    position: {
-                        lat: arr[i].lat,
-                        lng: arr[i].lng,
-                    },
-                    map: map
-                });
+            if (arr !== null && data !== null) {
+                for (let i = 0; i < arr.length; i++) {
+                    var content = `<div class="card" style="width: 18rem;">
+    <img src="${data[i].picture}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">${data[i].first_name} ${data[i].last_name}</h5>
+        <p class="card-text">${data[i].about_me}</p>
+        <a href="http://localhost:8080/user/${data[i].name}" class="btn btn-primary">View their profile</a>
+    </div>
+    </div>`
+                    // Marker generated
+                    var marker = new google.maps.Marker({
+                        position: {
+                            lat: arr[i].lat,
+                            lng: arr[i].lng,
+                        },
+                        map: map
+                    });
 
-                // Info Window generated
-                var infowindow = new google.maps.InfoWindow({
-                });
+                    // Info Window generated
+                    var infowindow = new google.maps.InfoWindow({
+                    });
 
-                // Event Listener for each marker
-                google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
-                    return function () {
-                        infowindow.setContent(content);
-                        infowindow.open(map, marker);
-                    };
-                })(marker, content, infowindow));
+                    // Event Listener for each marker
+                    google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+                        return function () {
+                            infowindow.setContent(content);
+                            infowindow.open(map, marker);
+                        };
+                    })(marker, content, infowindow));
+                }
             }
         }
-    }
 
-    $(".search-form").on("submit", function (e) {
-        e.preventDefault();
-        const type = $(".type").val();
-        const location = $(".location").val().trim();
-        const obj = {
-            input: type,
-            location: location,
-        };
-        $.ajax("/api/location", {
-            type: "POST",
-            data: obj,
-        }).then(function (data) {
-            console.log(data);
-            let emptyArr = [];
-            for (let i = 0; i < data.length; i++) {
-                const settings = {
-                    async: true,
-                    crossDomain: true,
-                    url: `https://redline-redline-zipcode.p.rapidapi.com/rest/info.json/${data[i].zip}/degrees`,
-                    method: "GET",
-                    headers: {
-                        "x-rapidapi-host": "redline-redline-zipcode.p.rapidapi.com",
-                        "x-rapidapi-key":
-                            "10701e6cc9msh93b8b8858829b24p16c255jsncff566ba3db6",
-                    },
-                };
+        $(".search-form").on("submit", function (e) {
+            e.preventDefault();
+            const type = $(".type").val();
+            const location = $(".location").val().trim();
+            const obj = {
+                input: type,
+                location: location,
+            };
+            $.ajax("/api/location", {
+                type: "POST",
+                data: obj,
+            }).then(function (data) {
+                console.log(data);
+                let emptyArr = [];
+                for (let i = 0; i < data.length; i++) {
+                    const settings = {
+                        async: true,
+                        crossDomain: true,
+                        url: `https://redline-redline-zipcode.p.rapidapi.com/rest/info.json/${data[i].zip}/degrees`,
+                        method: "GET",
+                        headers: {
+                            "x-rapidapi-host": "redline-redline-zipcode.p.rapidapi.com",
+                            "x-rapidapi-key":
+                                "10701e6cc9msh93b8b8858829b24p16c255jsncff566ba3db6",
+                        },
+                    };
 
-                $.ajax(settings).then(function (response) {
-                    emptyArr.push(response);
-                    if (emptyArr.length === data.length) {
-                        initMap(emptyArr, data);
-                    }
-                });
-            }
+                    $.ajax(settings).then(function (response) {
+                        emptyArr.push(response);
+                        if (emptyArr.length === data.length) {
+                            initMap(emptyArr, data);
+                        }
+                    });
+                }
+            });
         });
-    });
-</script>
-<script src="../../assets/js/map.js"></script>
+    </script>
+    <script src="../../assets/js/map.js"></script>
+</body>

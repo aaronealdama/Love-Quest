@@ -1,32 +1,79 @@
-<div class="container">
-    <br><br><br>
-    <div class=" col-lg-4 col-sm-12 d-flex justify-content-center">
-        <div class="card-body buttonForms" style="font-style: oblique;">
-            <div class="login-form pure-form pure-form-stacked">
-                <div class="join-container">
-                    <main class="join-main">
-                        <form class="chat-form">
-                            <div class="form-control">
-                                <label for="username">Username</label>
-                                <input type="text" name="username" class="username" placeholder="Enter username">
-                            </div>
-                            <div class="form-control">
-                                <label for="room" class="room">Room</label>
-                                <input type="text" name="roomname" class="roomname" placeholder="Enter a room name">
-                            </div>
-                            <div class="form-control">
-                                <label for="contact" class="contact">Contact</label>
-                                <input type="text" class="contactname" placeholder="Who are you trying to contact?">
-                            </div>
+<!DOCTYPE html>
+<html lang="en">
 
-                            <button type="submit" class="btn btn-primary">Start Chatting</button>
-                        </form>
-                    </main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+        integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg transparent navbar-collapse navbar-dark bg-dark">
+        <a class="navbar-brand logo" href="#">
+           <img src="/assets/css/lovequestlogo.png"  width="60" height="40"> LoveQuest
+        </a>
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarHamburger">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-lg-none d-xl-block" id="navbarHamburger">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/homepage">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/map">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/chat" target="popup" onclick="window.open('/chat','Chat','width=910,height=400')">Chat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        
+        
+    </nav>
+
+    <div class="container">
+        <div class="row chatFunction">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="card-body">
+                    <form class="sign-up-form pure-form pure-form-stacked">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="username" placeholder="Enter username" size="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="room" class="room">Room</label>
+                            <input type="text" name="roomname" class="roomname" placeholder="Enter a room name" size="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact" class="contact">Contact</label>
+                            <input type="text" class="contactname" placeholder="Who are you trying to contact?" size="50">
+                        </div>
+                    </form>
+                    <button type="submit" class="btn btn-primary">Start Chatting</button>
                 </div>
             </div>
+            
         </div>
+        
     </div>
-</div>
 
 
 
@@ -48,3 +95,6 @@
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
 <script src="../../assets/js/chat.js"></script>
+
+</body>
+
