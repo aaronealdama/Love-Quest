@@ -151,6 +151,20 @@ h1 {
 
 .chatFunction {
   position: relative;
-  top: 200px;
-  background-color: #598ad2;
+  align-items: center;
+  justify-content: center;
+  top: 150px;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  left: 20px;
+  
+}
+
+.sendContact {
+  text-align: center;
+  background-color: #aebecf;
+  color: white;
+  border: none;
+  border-radius: 12px;
 }
