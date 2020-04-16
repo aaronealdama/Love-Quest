@@ -1,10 +1,8 @@
 // Models and middleware
 const db = require("../models");
 const passport = require("../config/passport");
-// const sgMail = require("@sendgrid/mail");
-// sgMail.setApiKey(
-//   "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"
-// );
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const {
   userJoin,
@@ -137,29 +135,28 @@ module.exports = function (app) {
   });
 
   // Route to send emails
-  // app.post("/api/send-email", function (req, res) {
-  //   const to = req.body.to;
-  //   const from = req.body.from;
-  //   const user = req.body.user;
-  //   const room = req.body.room;
-  //   const msg = {
-  //     to: to,
-  //     from: from,
-  //     subject: "LoveQuester is trying to contact you",
-  //     text: `${user} is trying to contact you in room ${room}, join them!`,
-  //   };
-  //   sgMail.send(msg).then(
-  //     () => {},
-  //     (error) => {
-  //       console.error(error);
+  app.post("/api/send-email", function (req, res) {
+    const to = req.body.to;
+    const user = req.body.user;
+    const room = req.body.room;
+    const msg = {
+      to: `${to}`,
+      from: "lovequestbot@gmail.com",
+      subject: "LoveQuester is trying to contact you",
+      text: `${user} is trying to contact you in room ${room}, join them!`,
+    };
+    sgMail.send(msg).then(
+      () => {},
+      (error) => {
+        console.error(error);
 
-  //       if (error.response) {
-  //         console.error(error.response.body);
-  //       }
-  //     }
-  //   );
-  //   res.end();
-  // });
+        if (error.response) {
+          console.error(error.response.body);
+        }
+      }
+    );
+    res.end();
+  });
 
   //Route for retrieving specific user
   // information
