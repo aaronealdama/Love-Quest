@@ -2,6 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const sgMail = require("@sendgrid/mail");
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const {

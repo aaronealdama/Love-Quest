@@ -2,6 +2,9 @@ const express = require("express");
 const session = require("express-session");
 const http = require("http");
 const socketio = require("socket.io");
+const result = require("dotenv").config();
+console.log(result);
+console.log(process.env.SENDGRID_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT || 8080;

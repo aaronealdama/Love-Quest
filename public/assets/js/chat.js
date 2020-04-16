@@ -18,11 +18,12 @@ $(function () {
     }).then(function (boolean) {
       if (boolean === true) {
         sendEmail(name, room);
+      } else {
+        // Window relocation
+        window.location.href = `/chat/username=${$(".username")
+          .val()
+          .trim()}/chatroom=${room}`;
       }
-      // Window relocation
-      window.location.href = `/chat/username=${$(".username")
-        .val()
-        .trim()}/chatroom=${room}`;
     });
   });
 });
@@ -48,6 +49,10 @@ function sendEmail(name, room) {
         data: obj,
       }).then(function () {
         console.log("sent email successfully!");
+        // Window relocation
+        window.location.href = `/chat/username=${$(".username")
+          .val()
+          .trim()}/chatroom=${room}`;
       });
     });
   });
